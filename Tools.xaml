@@ -14,7 +14,7 @@
         <Label x:Name="GlowAnimDuration" Content="Glow animation duration" HorizontalAlignment="Left" Margin="64,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.697,0.311" Width="158"/>
         <Label x:Name="waveDurationLabel" Content="Wave Duration" HorizontalAlignment="Left" Margin="64,102,0,0" VerticalAlignment="Top" Height="24" Width="136"/>
         <Slider x:Name="WaveDurationSlider" HorizontalAlignment="Left" Margin="228,108,0,0" VerticalAlignment="Top" Width="150" Minimum="1" Maximum="130" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="65"/>
-        <Label x:Name="UpdateDelayLabel" Content="Update Delay" HorizontalAlignment="Left" Margin="64,136,0,0" VerticalAlignment="Top" Height="24" Width="136"/>
+        <Label x:Name="UpdateDelayLabel" Content="Update Delay" HorizontalAlignment="Left" Margin="64,136,0,0" VerticalAlignment="Top" Height="30" Width="136"/>
         <Slider x:Name="UpdateDelaySlider" HorizontalAlignment="Left" Margin="228,142,0,0" VerticalAlignment="Top" Width="150" Minimum="1" Maximum="100" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="35"/>
         <Label x:Name="labelRGBA" Content="hexagon color (Bloom)" HorizontalAlignment="Left" Margin="454,4,0,0" VerticalAlignment="Top" Width="226" FontSize="18"/>
         <Label x:Name="A" Content="A" HorizontalAlignment="Left" Margin="442,56,0,0" VerticalAlignment="Top" Width="55"/>
