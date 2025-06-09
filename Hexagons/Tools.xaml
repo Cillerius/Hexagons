@@ -40,6 +40,8 @@
         </ComboBox>
         <Button x:Name="SavePresetButton" Content="Save Preset" HorizontalAlignment="Left" Margin="819,259,0,0" VerticalAlignment="Top" Width="119" Click="SavePresetButton_Click"/>
         <Button x:Name="LoadPresetButton" Content="Load Preset" HorizontalAlignment="Left" Margin="674,259,0,0" VerticalAlignment="Top" Width="119" Click="LoadPresetButton_Click"/>
+        <Label x:Name="HexagonRadiusLabel" Content="Hexagon radius" HorizontalAlignment="Left" Margin="64,169,0,0" VerticalAlignment="Top" Width="159"/>
+        <Slider x:Name="HexagonRadiusSlider" HorizontalAlignment="Left" Margin="228,176,0,0" VerticalAlignment="Top" Width="150" Minimum="10" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="50" Maximum="100"/>
 
     </Grid>
 </Window>

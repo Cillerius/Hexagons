@@ -39,52 +39,59 @@ namespace Hexagons
 
         private void LoadFromRam()
         {
-            GlowDurationSlider.Value = MainWindow.hexGlowTime;
-            WaveDurationSlider.Value = MainWindow.waveAnimDuration;
-            UpdateDelaySlider.Value = MainWindow.UpdateDelay;
+            GlowDurationSlider.Value = MainWindow._config.GlowDurationMs;
+            WaveDurationSlider.Value = MainWindow._config.WaveSpeedMs;
+            UpdateDelaySlider.Value = MainWindow._config.UpdateDelayMs;
+            HexagonRadiusSlider.Value = MainWindow._config.Radius;
 
-            //Gloom Hexagon Color
-            ColorA.Text = MainWindow.hexagonA.ToString();
-            ColorR.Text = MainWindow.hexagonR.ToString();
-            ColorG.Text = MainWindow.hexagonG.ToString();
-            ColorB.Text = MainWindow.hexagonB.ToString();
+            //Glow Hexagon Color
+            ColorA.Text = MainWindow._config.GlowColor.A.ToString();
+            ColorR.Text = MainWindow._config.GlowColor.R.ToString();
+            ColorG.Text = MainWindow._config.GlowColor.G.ToString();
+            ColorB.Text = MainWindow._config.GlowColor.B.ToString();
 
             //Passive Hexagon Color
-            ColorAPasive.Text = MainWindow.hexagonAP.ToString();
-            ColorRPasive.Text = MainWindow.hexagonRP.ToString();
-            ColorGPasive.Text = MainWindow.hexagonGP.ToString();
-            ColorBPasive.Text = MainWindow.hexagonBP.ToString();
+            ColorAPasive.Text = MainWindow._config.PassiveColor.A.ToString();
+            ColorRPasive.Text = MainWindow._config.PassiveColor.R.ToString();
+            ColorGPasive.Text = MainWindow._config.PassiveColor.G.ToString();
+            ColorBPasive.Text = MainWindow._config.PassiveColor.B.ToString();
         }
 
         public void ApplyChanges()
         {
             try
             {
-                MainWindow.hexGlowTime = (int)GlowDurationSlider.Value;
-                MainWindow.waveAnimDuration = (int)WaveDurationSlider.Value;
-                MainWindow.UpdateDelay = (int)UpdateDelaySlider.Value;
+                MainWindow._config.GlowDurationMs = (int)GlowDurationSlider.Value;
+                MainWindow._config.WaveSpeedMs = (int)WaveDurationSlider.Value;
+                MainWindow._config.UpdateDelayMs = (int)UpdateDelaySlider.Value;
+                MainWindow._config.Radius = (int)HexagonRadiusSlider.Value;
 
-                //Gloom Hexagon Color
-                MainWindow.hexagonA = byte.Parse(ColorA.Text);
-                MainWindow.hexagonR = byte.Parse(ColorR.Text);
-                MainWindow.hexagonG = byte.Parse(ColorG.Text);
-                MainWindow.hexagonB = byte.Parse(ColorB.Text);
+                //Glow Hexagon Color
+                MainWindow._config.GlowColor = Color.FromArgb(
+                    byte.Parse(ColorA.Text),
+                    byte.Parse(ColorR.Text),
+                    byte.Parse(ColorG.Text),
+                    byte.Parse(ColorB.Text)
+                );
 
                 //Passive Hexagon Color
-                MainWindow.hexagonAP = byte.Parse(ColorAPasive.Text);
-                MainWindow.hexagonRP = byte.Parse(ColorRPasive.Text);
-                MainWindow.hexagonGP = byte.Parse(ColorGPasive.Text);
-                MainWindow.hexagonBP = byte.Parse(ColorBPasive.Text);
+                MainWindow._config.PassiveColor = Color.FromArgb(
+                    byte.Parse(ColorAPasive.Text),
+                    byte.Parse(ColorRPasive.Text),
+                    byte.Parse(ColorGPasive.Text),
+                    byte.Parse(ColorBPasive.Text)
+                );
 
                 //Start animation to reset hexagons
                 if (ResetAnimationCombobox.SelectedIndex == 1)
                 {
-                    MainWindow.AnimAll();
+                    MainWindow.AnimateAllHexagons();
                 }
                 else
                 {
                     MainWindow.StartWaveAnimation();
                 }
+                MainWindow.DrawHexagonGrid();
             }
             catch (Exception ex)
             {
@@ -99,8 +106,9 @@ namespace Hexagons
                 Save("SaveGlowDuration", (int)GlowDurationSlider.Value);
                 Save("SaveWaveDuration", (int)WaveDurationSlider.Value);
                 Save("SaveUpdateDelay", (int)UpdateDelaySlider.Value);
+                Save("HexagonRadius", (int)HexagonRadiusSlider.Value);
 
-                //Gloom Hexagon Color
+                //Glow Hexagon Color
                 Save("SaveColorA", byte.Parse(ColorA.Text));
                 Save("SaveColorR", byte.Parse(ColorR.Text));
                 Save("SaveColorG", byte.Parse(ColorG.Text));
@@ -124,24 +132,30 @@ namespace Hexagons
         {
             try
             {
-                MainWindow.hexGlowTime = Load("SaveGlowDuration", 250);
-                MainWindow.waveAnimDuration = Load("SaveWaveDuration", 65);
-                MainWindow.UpdateDelay = Load("SaveUpdateDelay", 35);
+                MainWindow._config.GlowDurationMs = Load("SaveGlowDuration", 250);
+                MainWindow._config.WaveSpeedMs = Load("SaveWaveDuration", 65);
+                MainWindow._config.UpdateDelayMs = Load("SaveUpdateDelay", 35);
+                MainWindow._config.Radius = Load("HexagonRadius", 50);
 
-                //Gloom Hexagon Color
-                MainWindow.hexagonA = (byte)Load("SaveColorA", 180);
-                MainWindow.hexagonR = (byte)Load("SaveColorR", 100);
-                MainWindow.hexagonG = (byte)Load("SaveColorG", 200);
-                MainWindow.hexagonB = (byte)Load("SaveColorB", 255);
+                //Glow Hexagon Color
+                MainWindow._config.GlowColor = Color.FromArgb(
+                    (byte)Load("SaveColorA", 180),
+                    (byte)Load("SaveColorR", 100),
+                    (byte)Load("SaveColorG", 200),
+                    (byte)Load("SaveColorB", 255)
+                );
 
                 //Passive Hexagon Color
-                MainWindow.hexagonAP = (byte)Load("SaveColorAPassive", 0);
-                MainWindow.hexagonRP = (byte)Load("SaveColorRPassive", 0);
-                MainWindow.hexagonGP = (byte)Load("SaveColorGPassive", 150);
-                MainWindow.hexagonBP = (byte)Load("SaveColorBPassive", 255);
+                MainWindow._config.PassiveColor = Color.FromArgb(
+                    (byte)Load("SaveColorAPassive", 0),
+                    (byte)Load("SaveColorRPassive", 0),
+                    (byte)Load("SaveColorGPassive", 150),
+                    (byte)Load("SaveColorBPassive", 255)
+                );
 
                 // Update the UI controls with loaded values
                 LoadFromRam();
+                ApplyChanges();
             }
             catch (Exception ex)
             {

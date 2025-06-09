@@ -62,7 +62,7 @@ namespace Hexagons
     public partial class MainWindow : Window
     {
         #region Fields and Properties
-        private readonly HexagonConfig _config = new();
+        public readonly HexagonConfig _config = new();
         private readonly List<Polygon> _hexagons = new();
         private readonly List<List<Polygon>> _hexagonColumns = new();
 
@@ -247,7 +247,7 @@ namespace Hexagons
         #endregion
 
         #region Animation Methods
-        private void StartWaveAnimation()
+        public void StartWaveAnimation()
         {
             if (_isWaveActive) return;
 
@@ -365,7 +365,7 @@ namespace Hexagons
         #endregion
 
         #region Hexagon Grid Creation
-        private void DrawHexagonGrid()
+        public void DrawHexagonGrid()
         {
             try
             {
