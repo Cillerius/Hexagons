@@ -15,13 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_2845430ACCC946BA8D24A950B07FE506"
+        "MsmKey" = "8:_47E4CB3102EF4BF8A73091C011E5E96E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7C7949012A374BA38884C21DFDD88676"
+        "MsmKey" = "8:_D36C0F82B9BD4F2CB4656B08291D8D56"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -37,7 +37,7 @@
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
-        "Compression" = "3:2"
+        "Compression" = "3:3"
         "SignOutput" = "11:FALSE"
         "CertificateFile" = "8:"
         "PrivateKeyFile" = "8:"
@@ -50,6 +50,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -74,6 +82,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -106,9 +122,9 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2845430ACCC946BA8D24A950B07FE506"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D36C0F82B9BD4F2CB4656B08291D8D56"
             {
-            "SourcePath" = "8:..\\..\\..\\Downloads\\hexagon_multiple_outline_icon_139470.ico"
+            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\hexagon_multiple_outline_icon_139470.ico"
             "TargetName" = "8:hexagon_multiple_outline_icon_139470.ico"
             "Tag" = "8:"
             "Folder" = "8:_66C694FBB7054B2E9AB74F30D6FA2A9E"
@@ -303,7 +319,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_EBB3F20650CF4B94A37144A906BBDAC4"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6317BA2BC1024C9CBDC20E1FD2795AA5"
             {
             "Name" = "8:Hexagons"
             "Arguments" = "8:"
@@ -311,10 +327,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_7C7949012A374BA38884C21DFDD88676"
+            "Target" = "8:_47E4CB3102EF4BF8A73091C011E5E96E"
             "Folder" = "8:_5FB253038CA649DDBEA2DB4F11509C9E"
             "WorkingFolder" = "8:_66C694FBB7054B2E9AB74F30D6FA2A9E"
-            "Icon" = "8:_2845430ACCC946BA8D24A950B07FE506"
+            "Icon" = "8:_D36C0F82B9BD4F2CB4656B08291D8D56"
             "Feature" = "8:"
             }
         }
@@ -716,7 +732,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_7C7949012A374BA38884C21DFDD88676"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_47E4CB3102EF4BF8A73091C011E5E96E"
             {
             "SourcePath" = "8:..\\Hexagons\\obj\\Debug\\net8.0-windows\\apphost.exe"
             "TargetName" = "8:"
