@@ -1,0 +1,13 @@
+{
+  "SaveGlowDuration": 250,
+  "SaveWaveDuration": 65,
+  "SaveUpdateDelay": 35,
+  "SaveColorA": 180,
+  "SaveColorR": 10,
+  "SaveColorG": 180,
+  "SaveColorB": 10,
+  "SaveColorAPassive": 0,
+  "SaveColorRPassive": 0,
+  "SaveColorGPassive": 150,
+  "SaveColorBPassive": 255
+}

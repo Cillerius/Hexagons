@@ -1,0 +1,45 @@
+﻿<Window x:Class="Hexagons.Tools"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hexagons"
+        mc:Ignorable="d"
+        Title="Tools" Height="500" Width="1000">
+    <Grid>
+        <Button x:Name="StopHexes" Content="Stop Hexagons" HorizontalAlignment="Left" Margin="813,415,0,0" VerticalAlignment="Top" Height="32" Width="131" Click="StopHexes_Click"/>
+        <Label x:Name="HexagonCounter" Content="Hexagons: 0" HorizontalAlignment="Left" Margin="64,31,0,0" VerticalAlignment="Top" Height="35" Width="158" Cursor="Arrow"/>
+        <Button x:Name="ResetHexagons" Content="ResetHexagons" HorizontalAlignment="Left" Margin="38,422,0,0" VerticalAlignment="Top" Height="27" Width="114" Click="ResetHexagons_Click"/>
+        <Slider x:Name="GlowDurationSlider" HorizontalAlignment="Left" Margin="228,75,0,0" VerticalAlignment="Top" Width="150" Minimum="1" Maximum="500" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="250"/>
+        <Label x:Name="GlowAnimDuration" Content="Glow animation duration" HorizontalAlignment="Left" Margin="64,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.697,0.311" Width="158"/>
+        <Label x:Name="waveDurationLabel" Content="Wave Duration" HorizontalAlignment="Left" Margin="64,102,0,0" VerticalAlignment="Top" Height="24" Width="136"/>
+        <Slider x:Name="WaveDurationSlider" HorizontalAlignment="Left" Margin="228,108,0,0" VerticalAlignment="Top" Width="150" Minimum="1" Maximum="130" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="65"/>
+        <Label x:Name="UpdateDelayLabel" Content="Update Delay" HorizontalAlignment="Left" Margin="64,136,0,0" VerticalAlignment="Top" Height="24" Width="136"/>
+        <Slider x:Name="UpdateDelaySlider" HorizontalAlignment="Left" Margin="228,142,0,0" VerticalAlignment="Top" Width="150" Minimum="1" Maximum="100" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="35"/>
+        <Label x:Name="labelRGBA" Content="hexagon color (Bloom)" HorizontalAlignment="Left" Margin="454,4,0,0" VerticalAlignment="Top" Width="226" FontSize="18"/>
+        <Label x:Name="A" Content="A" HorizontalAlignment="Left" Margin="442,56,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="ColorA" HorizontalAlignment="Left" Margin="520,58,0,0" TextWrapping="Wrap" Text="180" VerticalAlignment="Top" Width="94" Height="22"/>
+        <Label x:Name="R" Content="R" HorizontalAlignment="Left" Margin="442,92,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="ColorR" HorizontalAlignment="Left" Margin="520,94,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="94" Height="22"/>
+        <Label x:Name="G" Content="G" HorizontalAlignment="Left" Margin="442,128,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="ColorG" HorizontalAlignment="Left" Margin="520,130,0,0" TextWrapping="Wrap" Text="200" VerticalAlignment="Top" Width="94" Height="22"/>
+        <Label x:Name="B" Content="B" HorizontalAlignment="Left" Margin="442,161,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="ColorB" HorizontalAlignment="Left" Margin="520,163,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="94" Height="22"/>
+        <Label x:Name="labelRGBAPasive" Content="hexagon color (Pasive)" HorizontalAlignment="Left" Margin="718,5,0,0" VerticalAlignment="Top" Width="226" FontSize="18"/>
+        <Label x:Name="A_Copy" Content="A" HorizontalAlignment="Left" Margin="706,58,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="ColorAPasive" HorizontalAlignment="Left" Margin="784,60,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="94" Height="22"/>
+        <Label x:Name="R_Copy" Content="R" HorizontalAlignment="Left" Margin="706,94,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="ColorRPasive" HorizontalAlignment="Left" Margin="784,96,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="94" Height="22"/>
+        <Label x:Name="G_Copy" Content="G" HorizontalAlignment="Left" Margin="706,130,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="ColorGPasive" HorizontalAlignment="Left" Margin="784,132,0,0" TextWrapping="Wrap" Text="150" VerticalAlignment="Top" Width="94" Height="22"/>
+        <Label x:Name="B_Copy" Content="B" HorizontalAlignment="Left" Margin="706,163,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="ColorBPasive" HorizontalAlignment="Left" Margin="784,165,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="94" Height="22"/>
+        <ComboBox x:Name="ResetAnimationCombobox" HorizontalAlignment="Left" Margin="168,425,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="Wave"/>
+            <ComboBoxItem Content="Burst"/>
+        </ComboBox>
+        <Button x:Name="SavePresetButton" Content="Save Preset" HorizontalAlignment="Left" Margin="819,259,0,0" VerticalAlignment="Top" Width="119" Click="SavePresetButton_Click"/>
+        <Button x:Name="LoadPresetButton" Content="Load Preset" HorizontalAlignment="Left" Margin="674,259,0,0" VerticalAlignment="Top" Width="119" Click="LoadPresetButton_Click"/>
+
+    </Grid>
+</Window>
