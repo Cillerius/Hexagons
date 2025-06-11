@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|c:\\users\\user\\documents\\github\\hexagons\\hexagons\\tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|c:\\users\\user\\documents\\github\\hexagons\\hexagons\\tools.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:tools.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|c:\\users\\user\\documents\\github\\hexagons\\hexagons\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|c:\\users\\user\\documents\\github\\hexagons\\hexagons\\tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|c:\\users\\user\\documents\\github\\hexagons\\hexagons\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,37 +34,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Tools.xaml",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Tools.xaml",
               "RelativeDocumentMoniker": "Tools.xaml",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Tools.xaml",
               "RelativeToolTip": "Tools.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-07T12:55:53.633Z"
+              "WhenOpened": "2025-06-07T12:55:53.633Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Tools.xaml.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Tools.xaml.cs",
               "RelativeDocumentMoniker": "Tools.xaml.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Tools.xaml.cs",
               "RelativeToolTip": "Tools.xaml.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAewJAAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAnwJEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T12:55:54.251Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAiwCEAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T12:55:49.764Z"
             },

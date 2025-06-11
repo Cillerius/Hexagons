@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D36C0F82B9BD4F2CB4656B08291D8D56"
+        "MsmKey" = "8:_E78EC8D2695945889AC720AB27B8119A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -122,10 +122,10 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D36C0F82B9BD4F2CB4656B08291D8D56"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E78EC8D2695945889AC720AB27B8119A"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\hexagon_multiple_outline_icon_139470.ico"
-            "TargetName" = "8:hexagon_multiple_outline_icon_139470.ico"
+            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\HexagonIcon.ico"
+            "TargetName" = "8:HexagonIcon.ico"
             "Tag" = "8:"
             "Folder" = "8:_66C694FBB7054B2E9AB74F30D6FA2A9E"
             "Condition" = "8:"
@@ -197,16 +197,16 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:HexagonsSetup"
-        "ProductCode" = "8:{9AD3C6DD-61EB-4202-898B-6CFEAE3A382C}"
-        "PackageCode" = "8:{B6EF7FD5-19AF-4E77-B803-BF06C3298EE8}"
+        "ProductName" = "8:Hexagons"
+        "ProductCode" = "8:{9A93FE7D-EB28-4997-9824-5A863ECF72D3}"
+        "PackageCode" = "8:{C8CDEA78-946B-482E-96CB-7B98F15A05D8}"
         "UpgradeCode" = "8:{29D3451A-22AE-4FB7-B613-6794706FE8F0}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.1"
+        "ProductVersion" = "8:1.0.2"
         "Manufacturer" = "8:Default Company Name"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -330,7 +330,7 @@
             "Target" = "8:_47E4CB3102EF4BF8A73091C011E5E96E"
             "Folder" = "8:_5FB253038CA649DDBEA2DB4F11509C9E"
             "WorkingFolder" = "8:_66C694FBB7054B2E9AB74F30D6FA2A9E"
-            "Icon" = "8:_D36C0F82B9BD4F2CB4656B08291D8D56"
+            "Icon" = "8:_E78EC8D2695945889AC720AB27B8119A"
             "Feature" = "8:"
             }
         }
