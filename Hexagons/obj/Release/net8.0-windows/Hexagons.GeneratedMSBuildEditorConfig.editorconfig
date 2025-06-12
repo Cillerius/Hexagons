@@ -8,11 +8,7 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Hexagons
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\user\Documents\GitHub\Hexagons\Hexagons\
-=======
 build_property.ProjectDir = D:\self_made_programs\gitHexagons\Hexagons\Hexagons\
->>>>>>> Develop
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false

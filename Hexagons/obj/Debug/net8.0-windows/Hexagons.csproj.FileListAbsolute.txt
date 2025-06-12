@@ -39,8 +39,6 @@ C:\Users\user\Desktop\Hexagons\Hexagons\obj\Debug\net8.0-windows\ref\Hexagons.dl
 C:\Users\user\Desktop\Hexagons\Hexagons\obj\Debug\net8.0-windows\Tools.g.cs
 C:\Users\user\Desktop\Hexagons\Hexagons\obj\Debug\net8.0-windows\Hexagons_MarkupCompile.lref
 C:\Users\user\Desktop\Hexagons\Hexagons\obj\Debug\net8.0-windows\Tools.baml
-<<<<<<< HEAD
-=======
 C:\Users\user\Documents\GitHub\Hexagons\Hexagons\bin\Debug\net8.0-windows\Hexagons.exe
 C:\Users\user\Documents\GitHub\Hexagons\Hexagons\bin\Debug\net8.0-windows\Hexagons.deps.json
 C:\Users\user\Documents\GitHub\Hexagons\Hexagons\bin\Debug\net8.0-windows\Hexagons.runtimeconfig.json
@@ -87,4 +85,3 @@ D:\self_made_programs\gitHexagons\Hexagons\Hexagons\obj\Debug\net8.0-windows\ref
 D:\self_made_programs\gitHexagons\Hexagons\Hexagons\obj\Debug\net8.0-windows\Hexagons.pdb
 D:\self_made_programs\gitHexagons\Hexagons\Hexagons\obj\Debug\net8.0-windows\Hexagons.genruntimeconfig.cache
 D:\self_made_programs\gitHexagons\Hexagons\Hexagons\obj\Debug\net8.0-windows\ref\Hexagons.dll
->>>>>>> Develop

@@ -15,21 +15,13 @@
     {
         "Entry"
         {
-<<<<<<< HEAD
-        "MsmKey" = "8:_38A56F952DA44AD6BFAB72BCE9A06149"
-=======
         "MsmKey" = "8:_6EFEC1A89E2F42CA9F17FFF0CEDD9580"
->>>>>>> Develop
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-<<<<<<< HEAD
-        "MsmKey" = "8:_FC8866F85E2C407DAF652E75E5E93761"
-=======
         "MsmKey" = "8:_DD02F2448E1B443A92DACB33EBB9EEAB"
->>>>>>> Develop
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -88,21 +80,12 @@
         }
         "File"
         {
-<<<<<<< HEAD
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_38A56F952DA44AD6BFAB72BCE9A06149"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\HexagonIcon.ico"
-            "TargetName" = "8:HexagonIcon.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_964403E234804D2E84BC4AFBF7D4B654"
-=======
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6EFEC1A89E2F42CA9F17FFF0CEDD9580"
             {
             "SourcePath" = "8:C:\\Users\\ASUS\\Downloads\\HexagonIcon.ico"
             "TargetName" = "8:HexagonIcon.ico"
             "Tag" = "8:"
             "Folder" = "8:_CA6DD6A7FCC3419597410B3C834B791A"
->>>>>>> Develop
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -123,11 +106,7 @@
         }
         "Folder"
         {
-<<<<<<< HEAD
-            "{1525181F-901A-416C-8A58-119130FE478E}:_8BA3C5690CD44292B69FBA338F95C733"
-=======
             "{1525181F-901A-416C-8A58-119130FE478E}:_355C8F84FED64B11B0A155314CA0D9E7"
->>>>>>> Develop
             {
             "Name" = "8:#1919"
             "AlwaysCreate" = "11:FALSE"
@@ -138,9 +117,6 @@
                 {
                 }
             }
-<<<<<<< HEAD
-            "{3C67513D-01DD-4637-8A68-80971EB9504F}:_964403E234804D2E84BC4AFBF7D4B654"
-=======
             "{1525181F-901A-416C-8A58-119130FE478E}:_711841EFAD4249E79B6766878C5EE60A"
             {
             "Name" = "8:#1916"
@@ -153,7 +129,6 @@
                 }
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_CA6DD6A7FCC3419597410B3C834B791A"
->>>>>>> Develop
             {
             "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
@@ -165,20 +140,6 @@
                 {
                 }
             }
-<<<<<<< HEAD
-            "{1525181F-901A-416C-8A58-119130FE478E}:_CC9FDC825E334B86AE31CBF90A726FAC"
-            {
-            "Name" = "8:#1916"
-            "AlwaysCreate" = "11:FALSE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Property" = "8:DesktopFolder"
-                "Folders"
-                {
-                }
-            }
-=======
->>>>>>> Develop
         }
         "LaunchCondition"
         {
@@ -194,31 +155,15 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-<<<<<<< HEAD
-        "ProductName" = "8:Hexagons"
-        "ProductCode" = "8:{68FDD184-24DC-45D1-A267-6DC28242ADB9}"
-        "PackageCode" = "8:{0B6B4E62-716F-4180-B8D7-81E0A1E282EE}"
-        "UpgradeCode" = "8:{2706184C-C71C-4E03-97D3-996D86167FAA}"
-=======
         "ProductName" = "8:HexagonsSetup"
         "ProductCode" = "8:{36D8A852-6F18-48F9-B11B-3AF937B62671}"
         "PackageCode" = "8:{5CD8D2D1-6713-4406-85A6-D05013E4F4F2}"
         "UpgradeCode" = "8:{E6DC666E-11B3-4532-A03D-90B994205C58}"
->>>>>>> Develop
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-<<<<<<< HEAD
-        "ProductVersion" = "8:1.0.3"
-        "Manufacturer" = "8:Default Company Name"
-        "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:"
-        "Title" = "8:HexagonsSetup"
-        "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
-=======
         "ProductVersion" = "8:1.1.0"
         "Manufacturer" = "8:Default Company Name"
         "ARPHELPTELEPHONE" = "8:"
@@ -226,7 +171,6 @@
         "Title" = "8:Hexagons"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Cillerius"
->>>>>>> Develop
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -245,11 +189,7 @@
             {
                 "Keys"
                 {
-<<<<<<< HEAD
-                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_05048DECE48D473487BA7F6899202024"
-=======
                     "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_FF930AB5E5CF4E13B7997AB5051DDA34"
->>>>>>> Develop
                     {
                     "Name" = "8:Software"
                     "Condition" = "8:"
@@ -258,11 +198,7 @@
                     "Transitive" = "11:FALSE"
                         "Keys"
                         {
-<<<<<<< HEAD
-                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_003EE821DFDD4F1EB005C2B57CC607A1"
-=======
                             "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_C8B0BDF2C12740EB9475D08FFF9EFC90"
->>>>>>> Develop
                             {
                             "Name" = "8:[Manufacturer]"
                             "Condition" = "8:"
@@ -287,11 +223,7 @@
             {
                 "Keys"
                 {
-<<<<<<< HEAD
-                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_1E148319A6DE41C5A1A9B480D596A5D8"
-=======
                     "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_2829D886601A4202BB6BC280B69DACB5"
->>>>>>> Develop
                     {
                     "Name" = "8:Software"
                     "Condition" = "8:"
@@ -300,11 +232,7 @@
                     "Transitive" = "11:FALSE"
                         "Keys"
                         {
-<<<<<<< HEAD
-                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_BDB38D10F8CE41949FE3EAA1324AD756"
-=======
                             "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_E83C186308FA426490AB57CA4533805D"
->>>>>>> Develop
                             {
                             "Name" = "8:[Manufacturer]"
                             "Condition" = "8:"
@@ -349,11 +277,7 @@
         }
         "Shortcut"
         {
-<<<<<<< HEAD
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_1291F31A195947E0998CDD199367610D"
-=======
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D69D99B15F0C44358AFFB8CC4D0CEE5C"
->>>>>>> Develop
             {
             "Name" = "8:Hexagons"
             "Arguments" = "8:"
@@ -361,38 +285,23 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-<<<<<<< HEAD
-            "Target" = "8:_FC8866F85E2C407DAF652E75E5E93761"
-            "Folder" = "8:_8BA3C5690CD44292B69FBA338F95C733"
-            "WorkingFolder" = "8:_964403E234804D2E84BC4AFBF7D4B654"
-            "Icon" = "8:_38A56F952DA44AD6BFAB72BCE9A06149"
-=======
             "Target" = "8:_DD02F2448E1B443A92DACB33EBB9EEAB"
             "Folder" = "8:_355C8F84FED64B11B0A155314CA0D9E7"
             "WorkingFolder" = "8:_CA6DD6A7FCC3419597410B3C834B791A"
             "Icon" = "8:_6EFEC1A89E2F42CA9F17FFF0CEDD9580"
->>>>>>> Develop
             "Feature" = "8:"
             }
         }
         "UserInterface"
         {
-<<<<<<< HEAD
-            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_015A7C8A053942839D75BE6468C3A6A2"
-=======
             "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_04F8886D866C4889A76FFB48AD779DCC"
->>>>>>> Develop
             {
             "Name" = "8:#1900"
             "Sequence" = "3:1"
             "Attributes" = "3:1"
                 "Dialogs"
                 {
-<<<<<<< HEAD
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_126AAA603EA94D4583F442D604888942"
-=======
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_176BD0E65E00452BA9D69EFA095DED12"
->>>>>>> Develop
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Welcome"
@@ -440,11 +349,7 @@
                             }
                         }
                     }
-<<<<<<< HEAD
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_3CC5279742E94F7088D2D1463B7F768D"
-=======
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_5B8F475E5D664B1685C36B9FB3E8CC82"
->>>>>>> Develop
                     {
                     "Sequence" = "3:200"
                     "DisplayName" = "8:Installation Folder"
@@ -479,11 +384,7 @@
                             }
                         }
                     }
-<<<<<<< HEAD
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_89CC21B33871409CA851D7DC850E0FA0"
-=======
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_5C3B006EE6C544119259A6DC918090DD"
->>>>>>> Develop
                     {
                     "Sequence" = "3:300"
                     "DisplayName" = "8:Confirm Installation"
@@ -507,28 +408,6 @@
                     }
                 }
             }
-<<<<<<< HEAD
-            "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_118C9C7C15814735AF7B9FF1B4A7BCE0"
-            {
-            "UseDynamicProperties" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "SourcePath" = "8:<VsdDialogDir>\\VsdUserInterface.wim"
-            }
-            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_57ED080B032C4B97B3B399FCBD56BCC8"
-            {
-            "Name" = "8:#1900"
-            "Sequence" = "3:2"
-            "Attributes" = "3:1"
-                "Dialogs"
-                {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_06ECEAACF4A1413EA752F4736193AB99"
-                    {
-                    "Sequence" = "3:300"
-                    "DisplayName" = "8:Confirm Installation"
-                    "UseDynamicProperties" = "11:TRUE"
-                    "IsDependency" = "11:FALSE"
-                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
-=======
             "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_61BFF9872290488482A7DAA56BF559E4"
             {
             "Name" = "8:#1901"
@@ -543,7 +422,6 @@
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
->>>>>>> Develop
                         "Properties"
                         {
                             "BannerBitmap"
@@ -557,11 +435,6 @@
                             "Setting" = "3:1"
                             "UsePlugInResources" = "11:TRUE"
                             }
-<<<<<<< HEAD
-                        }
-                    }
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_354BB05A54F24B7A9B0914AA76B9709D"
-=======
                             "ShowProgress"
                             {
                             "Name" = "8:ShowProgress"
@@ -587,7 +460,6 @@
                 "Dialogs"
                 {
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_2025CD91FA0B4FA3A3B9F6BD82C2481C"
->>>>>>> Develop
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Welcome"
@@ -635,11 +507,7 @@
                             }
                         }
                     }
-<<<<<<< HEAD
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_E1CC9127879940ABB76AE2C85CCA1BFA"
-=======
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_34D66EEBB30C4FA8B7981BD9986AFC89"
->>>>>>> Develop
                     {
                     "Sequence" = "3:200"
                     "DisplayName" = "8:Installation Folder"
@@ -661,24 +529,6 @@
                             }
                         }
                     }
-<<<<<<< HEAD
-                }
-            }
-            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_9B9CC4AC0ED6402D9E5701D98F72CE74"
-            {
-            "Name" = "8:#1901"
-            "Sequence" = "3:1"
-            "Attributes" = "3:2"
-                "Dialogs"
-                {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_68CBE97DC49F4E4E97FC49F6BF16199B"
-                    {
-                    "Sequence" = "3:100"
-                    "DisplayName" = "8:Progress"
-                    "UseDynamicProperties" = "11:TRUE"
-                    "IsDependency" = "11:FALSE"
-                    "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
-=======
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_39FFC51D44D14C7CA394B0382EEFB8AB"
                     {
                     "Sequence" = "3:300"
@@ -686,7 +536,6 @@
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
->>>>>>> Develop
                         "Properties"
                         {
                             "BannerBitmap"
@@ -700,19 +549,6 @@
                             "Setting" = "3:1"
                             "UsePlugInResources" = "11:TRUE"
                             }
-<<<<<<< HEAD
-                            "ShowProgress"
-                            {
-                            "Name" = "8:ShowProgress"
-                            "DisplayName" = "8:#1009"
-                            "Description" = "8:#1109"
-                            "Type" = "3:5"
-                            "ContextData" = "8:1;True=1;False=0"
-                            "Attributes" = "3:0"
-                            "Setting" = "3:0"
-                            "Value" = "3:1"
-                            "DefaultValue" = "3:1"
-=======
                         }
                     }
                 }
@@ -748,16 +584,12 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:1"
->>>>>>> Develop
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
                     }
                 }
             }
-<<<<<<< HEAD
-            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_B692899E4A534DC6A92D1C7DC501160B"
-=======
             "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_92274AEF06424A50BBD81D0BF74A4B25"
             {
             "UseDynamicProperties" = "11:FALSE"
@@ -765,18 +597,13 @@
             "SourcePath" = "8:<VsdDialogDir>\\VsdBasicDialogs.wim"
             }
             "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_E3DC36CA75BE42C5B809FB85FC6765F7"
->>>>>>> Develop
             {
             "Name" = "8:#1901"
             "Sequence" = "3:2"
             "Attributes" = "3:2"
                 "Dialogs"
                 {
-<<<<<<< HEAD
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_C8FA9B5130394485B83F578348667519"
-=======
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_97B32464C39D4403A085FCE68CBA238A"
->>>>>>> Develop
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Progress"
@@ -813,53 +640,14 @@
                     }
                 }
             }
-<<<<<<< HEAD
-            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_B8AEA8C73023449480083B2BBD1DAFBC"
-            {
-            "Name" = "8:#1902"
-            "Sequence" = "3:2"
-            "Attributes" = "3:3"
-                "Dialogs"
-                {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_4F165070C1DC4EC4A430818D85E2255B"
-                    {
-                    "Sequence" = "3:100"
-                    "DisplayName" = "8:Finished"
-                    "UseDynamicProperties" = "11:TRUE"
-                    "IsDependency" = "11:FALSE"
-                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFinishedDlg.wid"
-                        "Properties"
-                        {
-                            "BannerBitmap"
-                            {
-                            "Name" = "8:BannerBitmap"
-                            "DisplayName" = "8:#1001"
-                            "Description" = "8:#1101"
-                            "Type" = "3:8"
-                            "ContextData" = "8:Bitmap"
-                            "Attributes" = "3:4"
-                            "Setting" = "3:1"
-                            "UsePlugInResources" = "11:TRUE"
-                            }
-                        }
-                    }
-                }
-            }
-            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_D6753D7F183F4D00AAE98DEDA955FEB3"
-=======
             "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_FBC6ADC9889A40CA9BE92CF563DE5C96"
->>>>>>> Develop
             {
             "Name" = "8:#1902"
             "Sequence" = "3:1"
             "Attributes" = "3:3"
                 "Dialogs"
                 {
-<<<<<<< HEAD
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_BB28D4ED8496433BA55ABA89F0AA8ED9"
-=======
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_E555CB803CA44BC7A3654402A4523879"
->>>>>>> Develop
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Finished"
@@ -896,35 +684,18 @@
                     }
                 }
             }
-<<<<<<< HEAD
-            "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_DE6E77396CBB49C88B4F1CFB3EA0156F"
-            {
-            "UseDynamicProperties" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "SourcePath" = "8:<VsdDialogDir>\\VsdBasicDialogs.wim"
-            }
-=======
->>>>>>> Develop
         }
         "MergeModule"
         {
         }
         "ProjectOutput"
         {
-<<<<<<< HEAD
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_FC8866F85E2C407DAF652E75E5E93761"
-=======
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DD02F2448E1B443A92DACB33EBB9EEAB"
->>>>>>> Develop
             {
             "SourcePath" = "8:..\\Hexagons\\obj\\Release\\net8.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
-<<<<<<< HEAD
-            "Folder" = "8:_964403E234804D2E84BC4AFBF7D4B654"
-=======
             "Folder" = "8:_CA6DD6A7FCC3419597410B3C834B791A"
->>>>>>> Develop
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"

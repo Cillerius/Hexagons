@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "0LdIZCUHpNc=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Hexagons.csproj",
-=======
   "dgSpecHash": "JHl0/wq2Qpk=",
   "success": true,
   "projectFilePath": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Hexagons.csproj",
->>>>>>> Develop
   "expectedPackageFiles": [],
   "logs": []
 }

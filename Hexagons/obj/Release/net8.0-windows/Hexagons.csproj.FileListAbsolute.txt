@@ -43,8 +43,6 @@ C:\Users\user\Documents\GitHub\Hexagons\Hexagons\obj\Release\net8.0-windows\refi
 C:\Users\user\Documents\GitHub\Hexagons\Hexagons\obj\Release\net8.0-windows\Hexagons.pdb
 C:\Users\user\Documents\GitHub\Hexagons\Hexagons\obj\Release\net8.0-windows\Hexagons.genruntimeconfig.cache
 C:\Users\user\Documents\GitHub\Hexagons\Hexagons\obj\Release\net8.0-windows\ref\Hexagons.dll
-<<<<<<< HEAD
-=======
 D:\self_made_programs\gitHexagons\Hexagons\Hexagons\bin\Release\net8.0-windows\Hexagons.exe
 D:\self_made_programs\gitHexagons\Hexagons\Hexagons\bin\Release\net8.0-windows\Hexagons.deps.json
 D:\self_made_programs\gitHexagons\Hexagons\Hexagons\bin\Release\net8.0-windows\Hexagons.runtimeconfig.json
@@ -68,4 +66,3 @@ D:\self_made_programs\gitHexagons\Hexagons\Hexagons\obj\Release\net8.0-windows\r
 D:\self_made_programs\gitHexagons\Hexagons\Hexagons\obj\Release\net8.0-windows\Hexagons.pdb
 D:\self_made_programs\gitHexagons\Hexagons\Hexagons\obj\Release\net8.0-windows\Hexagons.genruntimeconfig.cache
 D:\self_made_programs\gitHexagons\Hexagons\Hexagons\obj\Release\net8.0-windows\ref\Hexagons.dll
->>>>>>> Develop
