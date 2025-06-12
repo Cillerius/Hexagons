@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\",
   "Documents": [
     {
@@ -16,6 +17,24 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|c:\\users\\user\\documents\\github\\hexagons\\hexagons\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+=======
+  "WorkspaceRootPath": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|d:\\self_made_programs\\githexagons\\hexagons\\hexagons\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|d:\\self_made_programs\\githexagons\\hexagons\\hexagons\\tools.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:tools.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|d:\\self_made_programs\\githexagons\\hexagons\\hexagons\\tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|d:\\self_made_programs\\githexagons\\hexagons\\hexagons\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+>>>>>>> Develop
       "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -26,45 +45,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Tools.xaml",
+<<<<<<< HEAD
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Tools.xaml",
               "RelativeDocumentMoniker": "Tools.xaml",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Tools.xaml",
+=======
+              "DocumentMoniker": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml",
+              "RelativeDocumentMoniker": "Tools.xaml",
+              "ToolTip": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml",
+>>>>>>> Develop
               "RelativeToolTip": "Tools.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-06-07T12:55:53.633Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Tools.xaml.cs",
+<<<<<<< HEAD
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Tools.xaml.cs",
               "RelativeDocumentMoniker": "Tools.xaml.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Tools.xaml.cs",
+=======
+              "DocumentMoniker": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml.cs",
+              "RelativeDocumentMoniker": "Tools.xaml.cs",
+              "ToolTip": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml.cs",
+>>>>>>> Develop
               "RelativeToolTip": "Tools.xaml.cs",
-              "ViewState": "AgIAAAYBAAAAAAAAAAAwwBYBAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T12:55:54.251Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
+<<<<<<< HEAD
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\MainWindow.xaml.cs",
+=======
+              "DocumentMoniker": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml.cs",
+>>>>>>> Develop
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAGgCAAAAAAAAAADwv4ACAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAIwBsDAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T12:55:49.764Z"
             },
@@ -72,9 +106,15 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
+<<<<<<< HEAD
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\MainWindow.xaml",
+=======
+              "DocumentMoniker": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml",
+>>>>>>> Develop
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-06-07T12:55:48.939Z"

@@ -14,11 +14,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Hexagons.csproj",
       "projectName": "Hexagons",
       "projectPath": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Hexagons.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\obj\\",
+=======
+      "projectUniqueName": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Hexagons.csproj",
+      "projectName": "Hexagons",
+      "projectPath": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Hexagons.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\obj\\",
+>>>>>>> Develop
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
