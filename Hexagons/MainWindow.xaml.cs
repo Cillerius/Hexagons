@@ -66,7 +66,7 @@ namespace Hexagons
     {
         #region Fields and Properties
         public readonly HexagonConfig _config = new();
-        private readonly List<Polygon> _hexagons = new();
+        public readonly List<Polygon> _hexagons = new();
         private readonly List<List<Polygon>> _hexagonColumns = new();
 
         private MouseHook _mouseHook;
@@ -557,7 +557,7 @@ namespace Hexagons
         private void OpenSettings()
         {
             AnimateAllHexagons();
-            var tools = new Tools(this, _hexagons.Count)
+            var tools = new Tools(this)
             {
                 Topmost = true
             };

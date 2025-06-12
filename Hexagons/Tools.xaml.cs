@@ -21,11 +21,11 @@ namespace Hexagons
     {
         public MainWindow MainWindow;
 
-        public Tools(Window mainWindow, int hexagonCount)
+        public Tools(Window mainWindow)
         {
             InitializeComponent();
             MainWindow = (MainWindow)mainWindow;
-            HexagonCounter.Content = "Hexagon count: " + hexagonCount;
+            HexagonCounter.Content = "Hexagon count: " + MainWindow._hexagons.Count();
 
             LoadFromRam();
             EnsureDirectoryExists();
@@ -81,17 +81,18 @@ namespace Hexagons
                     byte.Parse(ColorGPasive.Text),
                     byte.Parse(ColorBPasive.Text)
                 );
-
+                MainWindow.DrawHexagonGrid();
                 //Start animation to reset hexagons
                 if (ResetAnimationCombobox.SelectedIndex == 1)
                 {
+                    Debug.WriteLine("Animating Burst (AnimateAllHexagons()");
                     MainWindow.AnimateAllHexagons();
                 }
                 else
                 {
                     MainWindow.StartWaveAnimation();
                 }
-                MainWindow.DrawHexagonGrid();
+                HexagonCounter.Content = "Hexagon count: " + MainWindow._hexagons.Count();
             }
             catch (Exception ex)
             {
