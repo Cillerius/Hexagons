@@ -30,13 +30,7 @@ namespace Hexagons
             LoadFromRam();
             EnsureDirectoryExists();
         }
-
-        private void StopHexes_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.Close();
-            this.Close();
-        }
-
+        #region Loading-Saving-applying
         private void LoadFromRam()
         {
             GlowDurationSlider.Value = MainWindow._config.GlowDurationMs;
@@ -163,7 +157,9 @@ namespace Hexagons
                 MessageBox.Show($"Error loading preset: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        #endregion
 
+        #region EventHandlers
         //Event handlers
         private void ResetHexagons_Click(object sender, RoutedEventArgs e)
         {
@@ -199,6 +195,14 @@ namespace Hexagons
             }
         }
 
+        private void StopHexes_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Close();
+            this.Close();
+        }
+        #endregion
+
+        #region JsonManagment
         //Json file management tools
         private static Dictionary<string, object> settings = new Dictionary<string, object>();
         private static string fileName = Path.Combine(
@@ -296,5 +300,6 @@ namespace Hexagons
                 throw new Exception($"Failed to clear settings: {ex.Message}");
             }
         }
+        #endregion
     }
 }
