@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Hexagons.csproj": {}
+    "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Hexagons.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Hexagons.csproj": {
+    "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Hexagons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Hexagons.csproj",
+        "projectUniqueName": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Hexagons.csproj",
         "projectName": "Hexagons",
-        "projectPath": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\Hexagons.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\GitHub\\Hexagons\\Hexagons\\obj\\",
+        "projectPath": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Hexagons.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

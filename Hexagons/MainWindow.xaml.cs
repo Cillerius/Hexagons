@@ -44,6 +44,8 @@ namespace Hexagons
         public int GlowDurationMs { get; set; } = 250;
         public int WaveSpeedMs { get; set; } = 65;
         public int UpdateDelayMs { get; set; } = 35;
+
+        public int RippleSpeedMs { get; set; } = 20;
     }
 
     public static class KeyCombinations
@@ -52,6 +54,7 @@ namespace Hexagons
         public const int KEY_S = 0x53;
         public const int KEY_A = 0x41;
         public const int KEY_R = 0x52;
+        public const int KEY_D = 0x44;
 
         public const int VK_CONTROL = 0x11;
         public const int VK_MENU = 0x12;    // Alt key
@@ -226,6 +229,12 @@ namespace Hexagons
             {
                 AnimateRandomHexagons();
             }
+            else if (vkCode == KeyCombinations.KEY_D && ctrl && shift)
+            {
+                StartRipple(new Point(
+    SystemParameters.PrimaryScreenWidth / 2,
+    SystemParameters.PrimaryScreenHeight / 2));
+            }
         }
 
         private void OnKeyDown(object sender, KeyEventArgs e)
@@ -362,6 +371,47 @@ namespace Hexagons
                 AnimateHexagonGlow(randomHex);
             }
         }
+
+        public void StartRipple(Point origin)
+        {
+            double maxRadius = Math.Sqrt(SystemParameters.PrimaryScreenWidth * SystemParameters.PrimaryScreenWidth +
+                                         SystemParameters.PrimaryScreenHeight * SystemParameters.PrimaryScreenHeight);
+
+            double step = 20; // how fast the ring grows (pixels per frame)
+            double currentRadius = 0;
+
+            HashSet<Polygon> alreadyGlowing = new();
+
+            DispatcherTimer rippleTimer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromMilliseconds(_config.RippleSpeedMs) // Now uses dedicated ripple timing
+            };
+
+            rippleTimer.Tick += (s, e) =>
+            {
+                currentRadius += step;
+
+                foreach (var hex in _hexagons)
+                {
+                    Point hexCenter = GetPolygonCenter(hex);
+                    double distance = GetDistance(origin, hexCenter);
+
+                    if (distance <= currentRadius && !alreadyGlowing.Contains(hex))
+                    {
+                        AnimateHexagonGlow(hex);
+                        alreadyGlowing.Add(hex);
+                    }
+                }
+
+                if (currentRadius >= maxRadius)
+                {
+                    rippleTimer.Stop();
+                }
+            };
+
+            rippleTimer.Start();
+        }
+
         #endregion
 
         #region Hexagon Grid Creation
@@ -514,6 +564,25 @@ namespace Hexagons
             tools.ShowDialog();
             StartWaveAnimation();
         }
+
+        private Point GetPolygonCenter(Polygon poly)
+        {
+            double sumX = 0, sumY = 0;
+            foreach (var p in poly.Points)
+            {
+                sumX += p.X;
+                sumY += p.Y;
+            }
+            return new Point(sumX / poly.Points.Count, sumY / poly.Points.Count);
+        }
+
+        private double GetDistance(Point a, Point b)
+        {
+            double dx = a.X - b.X;
+            double dy = a.Y - b.Y;
+            return Math.Sqrt(dx * dx + dy * dy);
+        }
+
         #endregion
     }
 
