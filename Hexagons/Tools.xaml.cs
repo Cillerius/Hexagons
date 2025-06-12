@@ -37,6 +37,7 @@ namespace Hexagons
             WaveDurationSlider.Value = MainWindow._config.WaveSpeedMs;
             UpdateDelaySlider.Value = MainWindow._config.UpdateDelayMs;
             HexagonRadiusSlider.Value = MainWindow._config.Radius;
+            RippleDuratonSlider.Value = MainWindow._config.RippleSpeedMs;
 
             //Glow Hexagon Color
             ColorA.Text = MainWindow._config.GlowColor.A.ToString();
@@ -59,6 +60,7 @@ namespace Hexagons
                 MainWindow._config.WaveSpeedMs = (int)WaveDurationSlider.Value;
                 MainWindow._config.UpdateDelayMs = (int)UpdateDelaySlider.Value;
                 MainWindow._config.Radius = (int)HexagonRadiusSlider.Value;
+                MainWindow._config.RippleSpeedMs = (int)RippleDuratonSlider.Value;
 
                 //Glow Hexagon Color
                 MainWindow._config.GlowColor = Color.FromArgb(
@@ -102,6 +104,7 @@ namespace Hexagons
                 Save("SaveWaveDuration", (int)WaveDurationSlider.Value);
                 Save("SaveUpdateDelay", (int)UpdateDelaySlider.Value);
                 Save("HexagonRadius", (int)HexagonRadiusSlider.Value);
+                Save("RippleDuration", (int)RippleDuratonSlider.Value);
 
                 //Glow Hexagon Color
                 Save("SaveColorA", byte.Parse(ColorA.Text));
@@ -131,6 +134,7 @@ namespace Hexagons
                 MainWindow._config.WaveSpeedMs = Load("SaveWaveDuration", 65);
                 MainWindow._config.UpdateDelayMs = Load("SaveUpdateDelay", 35);
                 MainWindow._config.Radius = Load("HexagonRadius", 50);
+                MainWindow._config.RippleSpeedMs = Load("RippleDuration", 20);
 
                 //Glow Hexagon Color
                 MainWindow._config.GlowColor = Color.FromArgb(
