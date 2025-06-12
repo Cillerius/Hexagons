@@ -37,6 +37,7 @@
         <ComboBox x:Name="ResetAnimationCombobox" HorizontalAlignment="Left" Margin="168,425,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
             <ComboBoxItem Content="Wave"/>
             <ComboBoxItem Content="Burst"/>
+            <ComboBoxItem Content="Ripple"/>
         </ComboBox>
         <Button x:Name="SavePresetButton" Content="Save Preset" HorizontalAlignment="Left" Margin="819,259,0,0" VerticalAlignment="Top" Width="119" Click="SavePresetButton_Click"/>
         <Button x:Name="LoadPresetButton" Content="Load Preset" HorizontalAlignment="Left" Margin="674,259,0,0" VerticalAlignment="Top" Width="119" Click="LoadPresetButton_Click"/>
@@ -44,6 +45,11 @@
         <Slider x:Name="HexagonRadiusSlider" HorizontalAlignment="Left" Margin="228,216,0,0" VerticalAlignment="Top" Width="150" Minimum="20" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="50" Maximum="80"/>
         <Label x:Name="RippleDurationLabel" Content="Ripple Duration" HorizontalAlignment="Left" Margin="64,137,0,0" VerticalAlignment="Top" Height="24" Width="136"/>
         <Slider x:Name="RippleDuratonSlider" HorizontalAlignment="Left" Margin="228,143,0,0" VerticalAlignment="Top" Width="150" Minimum="1" Maximum="39" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="20"/>
+        <ComboBox x:Name="CloseToolsAnimationCombobox" HorizontalAlignment="Left" Margin="293,425,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="Wave"/>
+            <ComboBoxItem Content="Burst"/>
+            <ComboBoxItem Content="Ripple"/>
+        </ComboBox>
 
     </Grid>
 </Window>

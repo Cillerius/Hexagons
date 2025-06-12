@@ -38,6 +38,8 @@ namespace Hexagons
             UpdateDelaySlider.Value = MainWindow._config.UpdateDelayMs;
             HexagonRadiusSlider.Value = MainWindow._config.Radius;
             RippleDuratonSlider.Value = MainWindow._config.RippleSpeedMs;
+            ResetAnimationCombobox.SelectedIndex = MainWindow._resetHexagonsAnimation;
+            CloseToolsAnimationCombobox.SelectedIndex = MainWindow._closeToolsAnimation;
 
             //Glow Hexagon Color
             ColorA.Text = MainWindow._config.GlowColor.A.ToString();
@@ -61,6 +63,8 @@ namespace Hexagons
                 MainWindow._config.UpdateDelayMs = (int)UpdateDelaySlider.Value;
                 MainWindow._config.Radius = (int)HexagonRadiusSlider.Value;
                 MainWindow._config.RippleSpeedMs = (int)RippleDuratonSlider.Value;
+                MainWindow._resetHexagonsAnimation = ResetAnimationCombobox.SelectedIndex;
+                MainWindow._closeToolsAnimation = CloseToolsAnimationCombobox.SelectedIndex;
 
                 //Glow Hexagon Color
                 MainWindow._config.GlowColor = Color.FromArgb(
@@ -84,6 +88,12 @@ namespace Hexagons
                     Debug.WriteLine("Animating Burst (AnimateAllHexagons()");
                     MainWindow.AnimateAllHexagons();
                 }
+                else if (ResetAnimationCombobox.SelectedIndex == 2)
+                {
+                    MainWindow.StartRipple(new Point(
+    SystemParameters.PrimaryScreenWidth / 2,
+    SystemParameters.PrimaryScreenHeight / 2));
+                }
                 else
                 {
                     MainWindow.StartWaveAnimation();
@@ -105,6 +115,10 @@ namespace Hexagons
                 Save("SaveUpdateDelay", (int)UpdateDelaySlider.Value);
                 Save("HexagonRadius", (int)HexagonRadiusSlider.Value);
                 Save("RippleDuration", (int)RippleDuratonSlider.Value);
+
+                //Tools Animations
+                Save("ResetHexagonsAnimation", ResetAnimationCombobox.SelectedIndex);
+                Save("CloseToolsAnimation", CloseToolsAnimationCombobox.SelectedIndex);
 
                 //Glow Hexagon Color
                 Save("SaveColorA", byte.Parse(ColorA.Text));
@@ -135,6 +149,10 @@ namespace Hexagons
                 MainWindow._config.UpdateDelayMs = Load("SaveUpdateDelay", 35);
                 MainWindow._config.Radius = Load("HexagonRadius", 50);
                 MainWindow._config.RippleSpeedMs = Load("RippleDuration", 20);
+
+                //Tools Animations
+                MainWindow._resetHexagonsAnimation = Load("ResetHexagonsAnimation", 0);
+                MainWindow._closeToolsAnimation = Load("CloseToolsAnimation", 0);
 
                 //Glow Hexagon Color
                 MainWindow._config.GlowColor = Color.FromArgb(

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.Pkcs;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
@@ -54,7 +55,7 @@ namespace Hexagons
         public const int KEY_S = 0x53;
         public const int KEY_A = 0x41;
         public const int KEY_R = 0x52;
-        public const int KEY_D = 0x44;
+        public const int KEY_T = 0x54;
 
         public const int VK_CONTROL = 0x11;
         public const int VK_MENU = 0x12;    // Alt key
@@ -78,6 +79,8 @@ namespace Hexagons
         private Point _currentMousePosition;
         private bool _isWaveActive = false;
         private int _currentWaveColumn = 0;
+        public int _resetHexagonsAnimation = 0;
+        public int _closeToolsAnimation = 0;
         #endregion
 
         #region Initialization
@@ -214,22 +217,23 @@ namespace Hexagons
             {
                 Application.Current.Dispatcher.BeginInvoke(StartWaveAnimation);
             }
-            // Ctrl+Shift+S: Open settings
-            else if (vkCode == KeyCombinations.KEY_S && ctrl && shift)
+            // Ctrl+Shift+T: Open Tools
+            else if (vkCode == KeyCombinations.KEY_T && ctrl && shift)
             {
-                OpenSettings();
+                OpenTools();
             }
             // Ctrl+Shift+A: Animate all hexagons
             else if (vkCode == KeyCombinations.KEY_A && ctrl && shift)
             {
                 AnimateAllHexagons();
             }
-            // Ctrl+Shift+R: Animate random hexagons
-            else if (vkCode == KeyCombinations.KEY_R && ctrl && shift)
+            // Ctrl+Shift+S: Animate Some hexagons
+            else if (vkCode == KeyCombinations.KEY_S && ctrl && shift)
             {
-                AnimateRandomHexagons();
+                AnimateSomeHexagons();
             }
-            else if (vkCode == KeyCombinations.KEY_D && ctrl && shift)
+            // Ctrl+Shift+R: Start Ripple animation
+            else if (vkCode == KeyCombinations.KEY_R && ctrl && shift)
             {
                 StartRipple(new Point(
     SystemParameters.PrimaryScreenWidth / 2,
@@ -360,7 +364,7 @@ namespace Hexagons
             }
         }
 
-        private void AnimateRandomHexagons()
+        private void AnimateSomeHexagons()
         {
             var random = new Random();
             int count = _hexagons.Count / 2;
@@ -554,15 +558,41 @@ namespace Hexagons
             return inside;
         }
 
-        private void OpenSettings()
+        private void OpenTools()
         {
-            AnimateAllHexagons();
+            switch (_closeToolsAnimation)
+            {
+                case 1:
+                    AnimateAllHexagons();
+                    break;
+                case 2:
+                    StartRipple(new Point(
+    SystemParameters.PrimaryScreenWidth / 2,
+    SystemParameters.PrimaryScreenHeight / 2));
+                    break;
+                default:
+                    StartWaveAnimation();
+                    break;
+            }
             var tools = new Tools(this)
             {
                 Topmost = true
             };
             tools.ShowDialog();
-            StartWaveAnimation();
+            switch (_closeToolsAnimation)
+            {
+                case 1:
+                    AnimateAllHexagons();
+                    break;
+                case 2:
+                    StartRipple(new Point(
+    SystemParameters.PrimaryScreenWidth / 2,
+    SystemParameters.PrimaryScreenHeight / 2));
+                    break;
+                default:
+                    StartWaveAnimation();
+                    break;
+            }
         }
 
         private Point GetPolygonCenter(Polygon poly)
