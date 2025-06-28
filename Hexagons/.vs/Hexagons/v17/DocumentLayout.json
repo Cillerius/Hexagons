@@ -38,8 +38,7 @@
               "RelativeToolTip": "Tools.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-06-07T12:55:53.633Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -49,7 +48,11 @@
               "RelativeDocumentMoniker": "Tools.xaml.cs",
               "ToolTip": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml.cs",
               "RelativeToolTip": "Tools.xaml.cs",
+<<<<<<< Updated upstream
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAIAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoBAAABAAAAAAAAAA==",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T12:55:54.251Z",
               "EditorCaption": ""
@@ -64,8 +67,7 @@
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAIwBsDAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T12:55:49.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T12:55:49.764Z"
             },
             {
               "$type": "Document",

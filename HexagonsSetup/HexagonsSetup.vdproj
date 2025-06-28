@@ -15,13 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_6EFEC1A89E2F42CA9F17FFF0CEDD9580"
+        "MsmKey" = "8:_43C8E7F596A0413AB57B50E96C244952"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_DD02F2448E1B443A92DACB33EBB9EEAB"
+        "MsmKey" = "8:_49401BA73FE443E4AF8546C9605D2E60"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -43,6 +43,25 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+<<<<<<< Updated upstream
+=======
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
+>>>>>>> Stashed changes
         }
         "Release"
         {
@@ -59,6 +78,25 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+<<<<<<< Updated upstream
+=======
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
+>>>>>>> Stashed changes
         }
     }
     "Deployable"
@@ -80,9 +118,9 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6EFEC1A89E2F42CA9F17FFF0CEDD9580"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_49401BA73FE443E4AF8546C9605D2E60"
             {
-            "SourcePath" = "8:C:\\Users\\ASUS\\Downloads\\HexagonIcon.ico"
+            "SourcePath" = "8:C:\\Users\\ASUS\\Desktop\\other\\HexagonIcon.ico"
             "TargetName" = "8:HexagonIcon.ico"
             "Tag" = "8:"
             "Folder" = "8:_CA6DD6A7FCC3419597410B3C834B791A"
@@ -155,16 +193,22 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
+<<<<<<< Updated upstream
         "ProductName" = "8:HexagonsSetup"
         "ProductCode" = "8:{36D8A852-6F18-48F9-B11B-3AF937B62671}"
         "PackageCode" = "8:{5CD8D2D1-6713-4406-85A6-D05013E4F4F2}"
+=======
+        "ProductName" = "8:Hexagons"
+        "ProductCode" = "8:{3D087318-B91E-4AE3-95D7-20F59C0A7627}"
+        "PackageCode" = "8:{C0A7E030-3D92-4AB7-9D52-4DDBFC72F248}"
+>>>>>>> Stashed changes
         "UpgradeCode" = "8:{E6DC666E-11B3-4532-A03D-90B994205C58}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
-        "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.1.0"
+        "InstallAllUsers" = "11:TRUE"
+        "ProductVersion" = "8:1.1.1"
         "Manufacturer" = "8:Default Company Name"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -277,7 +321,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D69D99B15F0C44358AFFB8CC4D0CEE5C"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_195E027CCCD54881BC5442832F6427F8"
             {
             "Name" = "8:Hexagons"
             "Arguments" = "8:"
@@ -285,10 +329,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_DD02F2448E1B443A92DACB33EBB9EEAB"
+            "Target" = "8:_43C8E7F596A0413AB57B50E96C244952"
             "Folder" = "8:_355C8F84FED64B11B0A155314CA0D9E7"
             "WorkingFolder" = "8:_CA6DD6A7FCC3419597410B3C834B791A"
-            "Icon" = "8:_6EFEC1A89E2F42CA9F17FFF0CEDD9580"
+            "Icon" = "8:_49401BA73FE443E4AF8546C9605D2E60"
             "Feature" = "8:"
             }
         }
@@ -690,7 +734,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DD02F2448E1B443A92DACB33EBB9EEAB"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_43C8E7F596A0413AB57B50E96C244952"
             {
             "SourcePath" = "8:..\\Hexagons\\obj\\Release\\net8.0-windows\\apphost.exe"
             "TargetName" = "8:"

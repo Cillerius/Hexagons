@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hexagons")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< Updated upstream
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0dba1918ab10834457590d028831cf744aa4e637")]
-=======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c82b5153bd657d9b3d797da81fc553b9456ee34")]
->>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("Hexagons")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hexagons")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
