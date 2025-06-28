@@ -38,6 +38,7 @@
             <ComboBoxItem Content="Wave"/>
             <ComboBoxItem Content="Burst"/>
             <ComboBoxItem Content="Ripple"/>
+            <ComboBoxItem Content="None"/>
         </ComboBox>
         <Button x:Name="SavePresetButton" Content="Save Preset" HorizontalAlignment="Left" Margin="819,259,0,0" VerticalAlignment="Top" Width="119" Click="SavePresetButton_Click"/>
         <Button x:Name="LoadPresetButton" Content="Load Preset" HorizontalAlignment="Left" Margin="674,259,0,0" VerticalAlignment="Top" Width="119" Click="LoadPresetButton_Click"/>
@@ -49,6 +50,7 @@
             <ComboBoxItem Content="Wave"/>
             <ComboBoxItem Content="Burst"/>
             <ComboBoxItem Content="Ripple"/>
+            <ComboBoxItem Content="None"/>
         </ComboBox>
 
     </Grid>

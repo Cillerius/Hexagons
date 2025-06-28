@@ -94,6 +94,10 @@ namespace Hexagons
     SystemParameters.PrimaryScreenWidth / 2,
     SystemParameters.PrimaryScreenHeight / 2));
                 }
+                else if (ResetAnimationCombobox.SelectedIndex == 3)
+                {
+                    return;
+                }
                 else
                 {
                     MainWindow.StartWaveAnimation();

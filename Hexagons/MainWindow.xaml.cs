@@ -218,22 +218,22 @@ namespace Hexagons
                 Application.Current.Dispatcher.BeginInvoke(StartWaveAnimation);
             }
             // Ctrl+Shift+T: Open Tools
-            else if (vkCode == KeyCombinations.KEY_T && ctrl && shift)
+            else if (vkCode == KeyCombinations.KEY_T && ctrl && alt && shift)
             {
                 OpenTools();
             }
             // Ctrl+Shift+A: Animate all hexagons
-            else if (vkCode == KeyCombinations.KEY_A && ctrl && shift)
+            else if (vkCode == KeyCombinations.KEY_A && ctrl && alt && shift)
             {
                 AnimateAllHexagons();
             }
             // Ctrl+Shift+S: Animate Some hexagons
-            else if (vkCode == KeyCombinations.KEY_S && ctrl && shift)
+            else if (vkCode == KeyCombinations.KEY_S && ctrl && alt && shift)
             {
                 AnimateSomeHexagons();
             }
             // Ctrl+Shift+R: Start Ripple animation
-            else if (vkCode == KeyCombinations.KEY_R && ctrl && shift)
+            else if (vkCode == KeyCombinations.KEY_R && ctrl && alt && shift)
             {
                 StartRipple(new Point(
     SystemParameters.PrimaryScreenWidth / 2,
@@ -570,6 +570,8 @@ namespace Hexagons
     SystemParameters.PrimaryScreenWidth / 2,
     SystemParameters.PrimaryScreenHeight / 2));
                     break;
+                case 3:
+                    break;
                 default:
                     StartWaveAnimation();
                     break;
@@ -588,6 +590,8 @@ namespace Hexagons
                     StartRipple(new Point(
     SystemParameters.PrimaryScreenWidth / 2,
     SystemParameters.PrimaryScreenHeight / 2));
+                    break;
+                case 3:
                     break;
                 default:
                     StartWaveAnimation();
