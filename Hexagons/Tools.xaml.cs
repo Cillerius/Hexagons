@@ -29,10 +29,6 @@ namespace Hexagons
 
             LoadFromRam();
             EnsureDirectoryExists();
-
-            // Initializing tooltips
-            GamingModeLabel.MouseEnter += GamingModeLabel_MouseEnter;
-            GamingModeLabel.MouseLeave += GamingModeLabel_MouseLeave;
         }
         #region Loading-Saving-applying
         private void LoadFromRam()
@@ -57,8 +53,8 @@ namespace Hexagons
             ColorGPasive.Text = MainWindow._config.PassiveColor.G.ToString();
             ColorBPasive.Text = MainWindow._config.PassiveColor.B.ToString();
 
-            //gameing mode
-            GamingModeCheckBox.IsChecked = MainWindow._config.GameMode;
+            //gameMode
+            GameModeCheckBox.IsChecked = MainWindow._config.GameMode;
         }
 
         public void ApplyChanges()
@@ -89,8 +85,8 @@ namespace Hexagons
                     byte.Parse(ColorBPasive.Text)
                 );
 
-                //gameing mode
-                MainWindow._config.GameMode = GamingModeCheckBox.IsChecked.Value;
+                //Game mode
+                MainWindow._config.GameMode = GameModeCheckBox.IsChecked.Value;
 
                 MainWindow.DrawHexagonGrid();
                 //Start animation to reset hexagons
@@ -143,8 +139,8 @@ namespace Hexagons
                 Save("SaveColorGPassive", byte.Parse(ColorGPasive.Text));
                 Save("SaveColorBPassive", byte.Parse(ColorBPasive.Text));
 
-                //gaming mode
-                Save("gameMode", GamingModeCheckBox.IsChecked.Value);
+                //game mode
+                Save("GameMode", GameModeCheckBox.IsChecked.Value);
 
                 ApplyChanges();
             }
@@ -184,8 +180,9 @@ namespace Hexagons
                     (byte)Load("SaveColorBPassive", 255)
                 );
 
-                //gaming mode
-                MainWindow._config.GameMode = Load("gameMode", false);
+                //game mode
+
+                MainWindow._config.GameMode = Load("GameMode", false);
 
                 // Update the UI controls with loaded values
                 LoadFromRam();
@@ -239,19 +236,6 @@ namespace Hexagons
             MainWindow.Close();
             this.Close();
         }
-
-        //Tool tiping
-
-        private void GamingModeLabel_MouseEnter(object sender, EventArgs e)
-        {
-            GamingModeToolTip.Visibility = Visibility.Visible; // Show the tooltip label
-        }
-
-        private void GamingModeLabel_MouseLeave(object sender, EventArgs e)
-        {
-            GamingModeToolTip.Visibility = Visibility.Hidden; // Hide the tooltip label
-        }
-
         #endregion
 
         #region JsonManagment
@@ -354,5 +338,34 @@ namespace Hexagons
         }
         #endregion
 
+
+        #region Tools window setup stuff
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TitleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ButtonState == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // Find the parent ComboBox
+            var border = sender as Border;
+            var comboBox = border.TemplatedParent as ComboBox;
+
+            if (comboBox != null)
+            {
+                comboBox.IsDropDownOpen = !comboBox.IsDropDownOpen;
+            }
+        }
+
+        #endregion
     }
 }

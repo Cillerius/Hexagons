@@ -168,10 +168,8 @@ namespace Hexagons
         #region Input Event Handlers
         private void OnMouseDown(Point screenPoint)
         {
-            //check if game mode is off
             if (!_config.GameMode)
             {
-
                 try
                 {
                     Debug.WriteLine($"Mouse down at: {screenPoint.X}, {screenPoint.Y}");
@@ -186,6 +184,7 @@ namespace Hexagons
                     Debug.WriteLine($"Error in mouse down: {ex.Message}");
                 }
             }
+
         }
 
         private void OnMouseUp(Point screenPoint)

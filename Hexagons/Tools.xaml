@@ -5,54 +5,447 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hexagons"
         mc:Ignorable="d"
-        Title="Tools" Height="500" Width="1000">
-    <Grid>
-        <Button x:Name="StopHexes" Content="Stop Hexagons" HorizontalAlignment="Left" Margin="813,415,0,0" VerticalAlignment="Top" Height="32" Width="131" Click="StopHexes_Click"/>
-        <Label x:Name="HexagonCounter" Content="Hexagons: 0" HorizontalAlignment="Left" Margin="64,31,0,0" VerticalAlignment="Top" Height="35" Width="158" Cursor="Arrow"/>
-        <Button x:Name="ResetHexagons" Content="ResetHexagons" HorizontalAlignment="Left" Margin="38,422,0,0" VerticalAlignment="Top" Height="27" Width="114" Click="ResetHexagons_Click"/>
-        <Slider x:Name="GlowDurationSlider" HorizontalAlignment="Left" Margin="228,75,0,0" VerticalAlignment="Top" Width="150" Minimum="1" Maximum="500" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="250"/>
-        <Label x:Name="GlowAnimDuration" Content="Glow Animation Duration" HorizontalAlignment="Left" Margin="64,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.697,0.311" Width="158"/>
-        <Label x:Name="waveDurationLabel" Content="Wave Duration" HorizontalAlignment="Left" Margin="64,102,0,0" VerticalAlignment="Top" Height="24" Width="136"/>
-        <Slider x:Name="WaveDurationSlider" HorizontalAlignment="Left" Margin="228,108,0,0" VerticalAlignment="Top" Width="150" Minimum="1" Maximum="130" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="65"/>
-        <Label x:Name="UpdateDelayLabel" Content="Update Delay" HorizontalAlignment="Left" Margin="64,176,0,0" VerticalAlignment="Top" Height="30" Width="136"/>
-        <Slider x:Name="UpdateDelaySlider" HorizontalAlignment="Left" Margin="228,182,0,0" VerticalAlignment="Top" Width="150" Minimum="1" Maximum="100" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="35"/>
-        <Label x:Name="labelRGBA" Content="hexagon color (Bloom)" HorizontalAlignment="Left" Margin="454,4,0,0" VerticalAlignment="Top" Width="226" FontSize="18"/>
-        <Label x:Name="A" Content="A" HorizontalAlignment="Left" Margin="442,56,0,0" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="ColorA" HorizontalAlignment="Left" Margin="520,58,0,0" TextWrapping="Wrap" Text="180" VerticalAlignment="Top" Width="94" Height="22"/>
-        <Label x:Name="R" Content="R" HorizontalAlignment="Left" Margin="442,92,0,0" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="ColorR" HorizontalAlignment="Left" Margin="520,94,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="94" Height="22"/>
-        <Label x:Name="G" Content="G" HorizontalAlignment="Left" Margin="442,128,0,0" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="ColorG" HorizontalAlignment="Left" Margin="520,130,0,0" TextWrapping="Wrap" Text="200" VerticalAlignment="Top" Width="94" Height="22"/>
-        <Label x:Name="B" Content="B" HorizontalAlignment="Left" Margin="442,161,0,0" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="ColorB" HorizontalAlignment="Left" Margin="520,163,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="94" Height="22"/>
-        <Label x:Name="labelRGBAPasive" Content="hexagon color (Pasive)" HorizontalAlignment="Left" Margin="718,5,0,0" VerticalAlignment="Top" Width="226" FontSize="18"/>
-        <Label x:Name="A_Copy" Content="A" HorizontalAlignment="Left" Margin="706,58,0,0" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="ColorAPasive" HorizontalAlignment="Left" Margin="784,60,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="94" Height="22"/>
-        <Label x:Name="R_Copy" Content="R" HorizontalAlignment="Left" Margin="706,94,0,0" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="ColorRPasive" HorizontalAlignment="Left" Margin="784,96,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="94" Height="22"/>
-        <Label x:Name="G_Copy" Content="G" HorizontalAlignment="Left" Margin="706,130,0,0" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="ColorGPasive" HorizontalAlignment="Left" Margin="784,132,0,0" TextWrapping="Wrap" Text="150" VerticalAlignment="Top" Width="94" Height="22"/>
-        <Label x:Name="B_Copy" Content="B" HorizontalAlignment="Left" Margin="706,163,0,0" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="ColorBPasive" HorizontalAlignment="Left" Margin="784,165,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="94" Height="22"/>
-        <ComboBox x:Name="ResetAnimationCombobox" HorizontalAlignment="Left" Margin="168,425,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
-            <ComboBoxItem Content="Wave"/>
-            <ComboBoxItem Content="Burst"/>
-            <ComboBoxItem Content="Ripple"/>
-        </ComboBox>
-        <Button x:Name="SavePresetButton" Content="Save Preset" HorizontalAlignment="Left" Margin="819,259,0,0" VerticalAlignment="Top" Width="119" Click="SavePresetButton_Click"/>
-        <Button x:Name="LoadPresetButton" Content="Load Preset" HorizontalAlignment="Left" Margin="674,259,0,0" VerticalAlignment="Top" Width="119" Click="LoadPresetButton_Click"/>
-        <Label x:Name="HexagonRadiusLabel" Content="Hexagon Radius" HorizontalAlignment="Left" Margin="64,209,0,0" VerticalAlignment="Top" Width="159"/>
-        <Slider x:Name="HexagonRadiusSlider" HorizontalAlignment="Left" Margin="228,216,0,0" VerticalAlignment="Top" Width="150" Minimum="20" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="50" Maximum="80"/>
-        <Label x:Name="RippleDurationLabel" Content="Ripple Duration" HorizontalAlignment="Left" Margin="64,137,0,0" VerticalAlignment="Top" Height="24" Width="136"/>
-        <Slider x:Name="RippleDuratonSlider" HorizontalAlignment="Left" Margin="228,143,0,0" VerticalAlignment="Top" Width="150" Minimum="1" Maximum="39" RenderTransformOrigin="0.642,0.612" SmallChange="1" Value="20"/>
-        <ComboBox x:Name="CloseToolsAnimationCombobox" HorizontalAlignment="Left" Margin="293,425,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
-            <ComboBoxItem Content="Wave"/>
-            <ComboBoxItem Content="Burst"/>
-            <ComboBoxItem Content="Ripple"/>
-        </ComboBox>
-        <Label x:Name="GamingModeLabel" Content="Gaming mode" HorizontalAlignment="Left" Margin="39,373,0,0" VerticalAlignment="Top" Width="159"/>
-        <CheckBox x:Name="GamingModeCheckBox" Content="" HorizontalAlignment="Left" Margin="143,379,0,0" VerticalAlignment="Top" IsChecked="False"/>
-        <Label x:Name="GamingModeToolTip" Content="Turn off clicking animations for games, animatoins binded to shortuts will stay" HorizontalAlignment="Left" Margin="12,341,0,0" VerticalAlignment="Top" Height="27" Width="423" Grid.Row="0" Visibility="Hidden" Background="#FFEFE147"/>
+        Title="Tools" Height="520" Width="1000"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanMinimize">
 
+    <Window.Resources>
+        <!-- Glass effect brush -->
+        <SolidColorBrush x:Key="GlassBackground" Color="#44000000" />
+        <SolidColorBrush x:Key="GlassBorder" Color="#60FFFFFF" />
+
+        <!-- Button style for glass effect -->
+        <Style x:Key="GlassButton" TargetType="Button">
+            <Setter Property="Background" Value="#30FFFFFF"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#40FFFFFF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#50FFFFFF"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#20FFFFFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- TextBox style for glass effect -->
+        <Style x:Key="GlassTextBox" TargetType="TextBox">
+            <Setter Property="Background" Value="#30FFFFFF"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#40FFFFFF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3">
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="5,2"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- ComboBox style for glass effect - Simple Fix -->
+        <Style x:Key="GlassComboBox" TargetType="ComboBox">
+            <Setter Property="Background" Value="#30FFFFFF"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#40FFFFFF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <Border x:Name="Border" 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="3"
+                            MouseDown="Border_MouseDown">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="20"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ContentPresenter x:Name="ContentSite" 
+                                              Grid.Column="0"
+                                              Content="{TemplateBinding SelectionBoxItem}"
+                                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                              ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                              Margin="5,3,5,3"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Left"/>
+                                    <TextBox x:Name="PART_EditableTextBox" 
+                                     Grid.Column="0"
+                                     Background="Transparent"
+                                     Foreground="{TemplateBinding Foreground}"
+                                     BorderThickness="0"
+                                     Margin="5,3,5,3"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Left"
+                                     Visibility="Hidden"
+                                     IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                                    <ToggleButton x:Name="ToggleButton" 
+                                          Grid.Column="1"
+                                          Background="Transparent"
+                                          BorderBrush="Transparent"
+                                          BorderThickness="0"
+                                          Focusable="False"
+                                          IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          ClickMode="Press">
+                                        <Path x:Name="Arrow" 
+                                      Fill="White" 
+                                      HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center" 
+                                      Data="M 0 0 L 4 4 L 8 0 Z"/>
+                                    </ToggleButton>
+                                </Grid>
+                            </Border>
+                            <Popup x:Name="Popup" 
+                           Placement="Bottom" 
+                           IsOpen="{TemplateBinding IsDropDownOpen}" 
+                           AllowsTransparency="True" 
+                           Focusable="False" 
+                           PopupAnimation="Slide">
+                                <Grid x:Name="DropDown" 
+                              Background="#80000000" 
+                              MinWidth="{TemplateBinding ActualWidth}" 
+                              MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <Border Background="#40FFFFFF" 
+                                    BorderBrush="#60FFFFFF" 
+                                    BorderThickness="1" 
+                                    CornerRadius="3">
+                                        <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                            <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained"/>
+                                        </ScrollViewer>
+                                    </Border>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- ComboBoxItem style for glass effect -->
+        <Style x:Key="GlassComboBoxItem" TargetType="ComboBoxItem">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBoxItem">
+                        <Border x:Name="Border" 
+                                Background="{TemplateBinding Background}" 
+                                BorderThickness="0" 
+                                CornerRadius="2" 
+                                Margin="1">
+                            <ContentPresenter Margin="5,2,5,2" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#50FFFFFF"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#30FFFFFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Slider style for glass effect -->
+        <Style x:Key="GlassSlider" TargetType="Slider">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#30FFFFFF"/>
+        </Style>
+
+        <!-- Label style for glass effect -->
+        <Style x:Key="GlassLabel" TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" BlurRadius="2" Direction="315" ShadowDepth="1" Opacity="0.7"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- CheckBox style for glass effect -->
+        <Style x:Key="GlassCheckBox" TargetType="CheckBox">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" BlurRadius="2" Direction="315" ShadowDepth="1" Opacity="0.7"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border x:Name="CheckBoxBorder" 
+                                    Grid.Column="0"
+                                    Background="#30FFFFFF" 
+                                    BorderBrush="#40FFFFFF" 
+                                    BorderThickness="1"
+                                    CornerRadius="3"
+                                    Width="16" 
+                                    Height="16">
+                                <Path x:Name="CheckMark" 
+                                      Fill="White" 
+                                      HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center" 
+                                      Data="M 0 3 L 3 6 L 8 0" 
+                                      Stroke="White" 
+                                      StrokeThickness="1.5"
+                                      Visibility="Collapsed"/>
+                            </Border>
+                            <ContentPresenter Grid.Column="1" 
+                                              Margin="5,0,0,0" 
+                                              VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="CheckBoxBorder" Property="Background" Value="#50FFFFFF"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="CheckBoxBorder" Property="Background" Value="#20FFFFFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <!-- Main glass container with dark background -->
+    <Grid Background="#FF1A1A1A">
+        <!-- Glass effect overlay -->
+        <Border Background="{StaticResource GlassBackground}" 
+                BorderBrush="{StaticResource GlassBorder}" 
+                BorderThickness="1" 
+                CornerRadius="10"
+                Margin="10">
+            <Border.Effect>
+                <BlurEffect Radius="0.5"/>
+            </Border.Effect>
+
+            <Grid Margin="10">
+                <!-- Background blur overlay -->
+                <Rectangle Fill="#15FFFFFF" RadiusX="8" RadiusY="8"/>
+
+                <!-- All controls with glass styling -->
+                <Button x:Name="StopHexes" Content="Stop Hexagons" 
+                        Style="{StaticResource GlassButton}"
+                        HorizontalAlignment="Left" Margin="793,385,0,0" VerticalAlignment="Top" 
+                        Height="32" Width="131" Click="StopHexes_Click"/>
+
+                <Label x:Name="HexagonCounter" Content="Hexagons: 0" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="64,31,0,0" VerticalAlignment="Top" 
+                       Height="35" Width="158" Cursor="Arrow"/>
+
+                <Button x:Name="ResetHexagons" Content="Reset Hexagons" 
+                        Style="{StaticResource GlassButton}"
+                        HorizontalAlignment="Left" Margin="38,392,0,0" VerticalAlignment="Top" 
+                        Height="27" Width="114" Click="ResetHexagons_Click"/>
+
+                <Slider x:Name="GlowDurationSlider" 
+                        Style="{StaticResource GlassSlider}"
+                        HorizontalAlignment="Left" Margin="228,75,0,0" VerticalAlignment="Top" 
+                        Width="150" Minimum="1" Maximum="500" RenderTransformOrigin="0.642,0.612" 
+                        SmallChange="1" Value="250"/>
+
+                <Label x:Name="GlowAnimDuration" Content="Glow Animation Duration" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="64,71,0,0" VerticalAlignment="Top" 
+                       RenderTransformOrigin="-4.697,0.311" Width="158"/>
+
+                <Label x:Name="waveDurationLabel" Content="Wave Duration" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="64,102,0,0" VerticalAlignment="Top" 
+                       Height="24" Width="136"/>
+
+                <Slider x:Name="WaveDurationSlider" 
+                        Style="{StaticResource GlassSlider}"
+                        HorizontalAlignment="Left" Margin="228,108,0,0" VerticalAlignment="Top" 
+                        Width="150" Minimum="1" Maximum="130" RenderTransformOrigin="0.642,0.612" 
+                        SmallChange="1" Value="65"/>
+
+                <Label x:Name="UpdateDelayLabel" Content="Update Delay" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="64,176,0,0" VerticalAlignment="Top" 
+                       Height="30" Width="136"/>
+
+                <Slider x:Name="UpdateDelaySlider" 
+                        Style="{StaticResource GlassSlider}"
+                        HorizontalAlignment="Left" Margin="228,182,0,0" VerticalAlignment="Top" 
+                        Width="150" Minimum="1" Maximum="100" RenderTransformOrigin="0.642,0.612" 
+                        SmallChange="1" Value="35"/>
+
+                <Label x:Name="labelRGBA" Content="Hexagon Color (Bloom)" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="454,4,0,0" VerticalAlignment="Top" 
+                       Width="226" FontSize="18"/>
+
+                <Label x:Name="A" Content="A" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="442,56,0,0" VerticalAlignment="Top" Width="55"/>
+
+                <TextBox x:Name="ColorA" 
+                         Style="{StaticResource GlassTextBox}"
+                         HorizontalAlignment="Left" Margin="520,58,0,0" TextWrapping="Wrap" 
+                         Text="180" VerticalAlignment="Top" Width="94" Height="22"/>
+
+                <Label x:Name="R" Content="R" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="442,92,0,0" VerticalAlignment="Top" Width="55"/>
+
+                <TextBox x:Name="ColorR" 
+                         Style="{StaticResource GlassTextBox}"
+                         HorizontalAlignment="Left" Margin="520,94,0,0" TextWrapping="Wrap" 
+                         Text="100" VerticalAlignment="Top" Width="94" Height="22"/>
+
+                <Label x:Name="G" Content="G" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="442,128,0,0" VerticalAlignment="Top" Width="55"/>
+
+                <TextBox x:Name="ColorG" 
+                         Style="{StaticResource GlassTextBox}"
+                         HorizontalAlignment="Left" Margin="520,130,0,0" TextWrapping="Wrap" 
+                         Text="200" VerticalAlignment="Top" Width="94" Height="22"/>
+
+                <Label x:Name="B" Content="B" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="442,161,0,0" VerticalAlignment="Top" Width="55"/>
+
+                <TextBox x:Name="ColorB" 
+                         Style="{StaticResource GlassTextBox}"
+                         HorizontalAlignment="Left" Margin="520,163,0,0" TextWrapping="Wrap" 
+                         Text="255" VerticalAlignment="Top" Width="94" Height="22"/>
+
+                <Label x:Name="labelRGBAPasive" Content="Hexagon Color (Passive)" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="718,5,0,0" VerticalAlignment="Top" 
+                       Width="226" FontSize="18"/>
+
+                <Label x:Name="A_Copy" Content="A" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="706,58,0,0" VerticalAlignment="Top" Width="55"/>
+
+                <TextBox x:Name="ColorAPasive" 
+                         Style="{StaticResource GlassTextBox}"
+                         HorizontalAlignment="Left" Margin="784,60,0,0" TextWrapping="Wrap" 
+                         Text="0" VerticalAlignment="Top" Width="94" Height="22"/>
+
+                <Label x:Name="R_Copy" Content="R" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="706,94,0,0" VerticalAlignment="Top" Width="55"/>
+
+                <TextBox x:Name="ColorRPasive" 
+                         Style="{StaticResource GlassTextBox}"
+                         HorizontalAlignment="Left" Margin="784,96,0,0" TextWrapping="Wrap" 
+                         Text="0" VerticalAlignment="Top" Width="94" Height="22"/>
+
+                <Label x:Name="G_Copy" Content="G" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="706,130,0,0" VerticalAlignment="Top" Width="55"/>
+
+                <TextBox x:Name="ColorGPasive" 
+                         Style="{StaticResource GlassTextBox}"
+                         HorizontalAlignment="Left" Margin="784,132,0,0" TextWrapping="Wrap" 
+                         Text="150" VerticalAlignment="Top" Width="94" Height="22"/>
+
+                <Label x:Name="B_Copy" Content="B" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="706,163,0,0" VerticalAlignment="Top" Width="55"/>
+
+                <TextBox x:Name="ColorBPasive" 
+                         Style="{StaticResource GlassTextBox}"
+                         HorizontalAlignment="Left" Margin="784,165,0,0" TextWrapping="Wrap" 
+                         Text="255" VerticalAlignment="Top" Width="94" Height="22"/>
+
+                <ComboBox x:Name="ResetAnimationCombobox" 
+                          Style="{StaticResource GlassComboBox}"
+                          HorizontalAlignment="Left" Margin="168,395,0,0" VerticalAlignment="Top" 
+                          Width="120" SelectedIndex="0">
+                    <ComboBoxItem Content="Wave" Style="{StaticResource GlassComboBoxItem}"/>
+                    <ComboBoxItem Content="Burst" Style="{StaticResource GlassComboBoxItem}"/>
+                    <ComboBoxItem Content="Ripple" Style="{StaticResource GlassComboBoxItem}"/>
+                </ComboBox>
+
+                <Button x:Name="SavePresetButton" Content="Save Preset" 
+                        Style="{StaticResource GlassButton}"
+                        HorizontalAlignment="Left" Margin="819,259,0,0" VerticalAlignment="Top" 
+                        Width="119" Click="SavePresetButton_Click"/>
+
+                <Button x:Name="LoadPresetButton" Content="Load Preset" 
+                        Style="{StaticResource GlassButton}"
+                        HorizontalAlignment="Left" Margin="674,259,0,0" VerticalAlignment="Top" 
+                        Width="119" Click="LoadPresetButton_Click"/>
+
+                <Label x:Name="HexagonRadiusLabel" Content="Hexagon Radius" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="64,209,0,0" VerticalAlignment="Top" Width="159"/>
+
+                <Slider x:Name="HexagonRadiusSlider" 
+                        Style="{StaticResource GlassSlider}"
+                        HorizontalAlignment="Left" Margin="228,216,0,0" VerticalAlignment="Top" 
+                        Width="150" Minimum="20" RenderTransformOrigin="0.642,0.612" 
+                        SmallChange="1" Value="50" Maximum="80"/>
+
+                <Label x:Name="RippleDurationLabel" Content="Ripple Duration" 
+                       Style="{StaticResource GlassLabel}"
+                       HorizontalAlignment="Left" Margin="64,137,0,0" VerticalAlignment="Top" 
+                       Height="24" Width="136"/>
+
+                <Slider x:Name="RippleDuratonSlider" 
+                        Style="{StaticResource GlassSlider}"
+                        HorizontalAlignment="Left" Margin="228,143,0,0" VerticalAlignment="Top" 
+                        Width="150" Minimum="1" Maximum="39" RenderTransformOrigin="0.642,0.612" 
+                        SmallChange="1" Value="20"/>
+
+                <ComboBox x:Name="CloseToolsAnimationCombobox" 
+                          Style="{StaticResource GlassComboBox}"
+                          HorizontalAlignment="Left" Margin="293,395,0,0" VerticalAlignment="Top" 
+                          Width="120" SelectedIndex="0">
+                    <ComboBoxItem Content="Wave" Style="{StaticResource GlassComboBoxItem}"/>
+                    <ComboBoxItem Content="Burst" Style="{StaticResource GlassComboBoxItem}"/>
+                    <ComboBoxItem Content="Ripple" Style="{StaticResource GlassComboBoxItem}"/>
+                </ComboBox>
+
+                <CheckBox x:Name="GameModeCheckBox" Content="Game mode" 
+                          Style="{StaticResource GlassCheckBox}"
+                          HorizontalAlignment="Left" Margin="38,353,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
