@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hexagons")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49c8ec8232408535a3c5a4e13a4fe4bb8f0a865c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec0c1ac101be429e6cafb996a17590712d41c5a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hexagons")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hexagons")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
