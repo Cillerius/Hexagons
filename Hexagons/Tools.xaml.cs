@@ -29,6 +29,10 @@ namespace Hexagons
 
             LoadFromRam();
             EnsureDirectoryExists();
+
+            // Initializing tooltips
+            GamingModeLabel.MouseEnter += GamingModeLabel_MouseEnter;
+            GamingModeLabel.MouseLeave += GamingModeLabel_MouseLeave;
         }
         #region Loading-Saving-applying
         private void LoadFromRam()
@@ -52,6 +56,9 @@ namespace Hexagons
             ColorRPasive.Text = MainWindow._config.PassiveColor.R.ToString();
             ColorGPasive.Text = MainWindow._config.PassiveColor.G.ToString();
             ColorBPasive.Text = MainWindow._config.PassiveColor.B.ToString();
+
+            //gameing mode
+            GamingModeCheckBox.IsChecked = MainWindow._config.GameMode;
         }
 
         public void ApplyChanges()
@@ -81,6 +88,10 @@ namespace Hexagons
                     byte.Parse(ColorGPasive.Text),
                     byte.Parse(ColorBPasive.Text)
                 );
+
+                //gameing mode
+                MainWindow._config.GameMode = GamingModeCheckBox.IsChecked.Value;
+
                 MainWindow.DrawHexagonGrid();
                 //Start animation to reset hexagons
                 if (ResetAnimationCombobox.SelectedIndex == 1)
@@ -132,6 +143,9 @@ namespace Hexagons
                 Save("SaveColorGPassive", byte.Parse(ColorGPasive.Text));
                 Save("SaveColorBPassive", byte.Parse(ColorBPasive.Text));
 
+                //gaming mode
+                Save("gameMode", GamingModeCheckBox.IsChecked.Value);
+
                 ApplyChanges();
             }
             catch (Exception ex)
@@ -169,6 +183,9 @@ namespace Hexagons
                     (byte)Load("SaveColorGPassive", 150),
                     (byte)Load("SaveColorBPassive", 255)
                 );
+
+                //gaming mode
+                MainWindow._config.GameMode = Load("gameMode", false);
 
                 // Update the UI controls with loaded values
                 LoadFromRam();
@@ -222,6 +239,19 @@ namespace Hexagons
             MainWindow.Close();
             this.Close();
         }
+
+        //Tool tiping
+
+        private void GamingModeLabel_MouseEnter(object sender, EventArgs e)
+        {
+            GamingModeToolTip.Visibility = Visibility.Visible; // Show the tooltip label
+        }
+
+        private void GamingModeLabel_MouseLeave(object sender, EventArgs e)
+        {
+            GamingModeToolTip.Visibility = Visibility.Hidden; // Hide the tooltip label
+        }
+
         #endregion
 
         #region JsonManagment
@@ -323,5 +353,6 @@ namespace Hexagons
             }
         }
         #endregion
+
     }
 }

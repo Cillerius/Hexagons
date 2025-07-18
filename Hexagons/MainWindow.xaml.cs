@@ -47,6 +47,8 @@ namespace Hexagons
         public int UpdateDelayMs { get; set; } = 35;
 
         public int RippleSpeedMs { get; set; } = 20;
+
+        public bool GameMode = false;
     }
 
     public static class KeyCombinations
@@ -166,18 +168,23 @@ namespace Hexagons
         #region Input Event Handlers
         private void OnMouseDown(Point screenPoint)
         {
-            try
+            //check if game mode is off
+            if (!_config.GameMode)
             {
-                Debug.WriteLine($"Mouse down at: {screenPoint.X}, {screenPoint.Y}");
-                _isMouseDown = true;
-                _currentMousePosition = screenPoint;
 
-                TriggerGlowAtPosition(screenPoint);
-                _holdTimer.Start();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error in mouse down: {ex.Message}");
+                try
+                {
+                    Debug.WriteLine($"Mouse down at: {screenPoint.X}, {screenPoint.Y}");
+                    _isMouseDown = true;
+                    _currentMousePosition = screenPoint;
+
+                    TriggerGlowAtPosition(screenPoint);
+                    _holdTimer.Start();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error in mouse down: {ex.Message}");
+                }
             }
         }
 

@@ -50,6 +50,9 @@
             <ComboBoxItem Content="Burst"/>
             <ComboBoxItem Content="Ripple"/>
         </ComboBox>
+        <Label x:Name="GamingModeLabel" Content="Gaming mode" HorizontalAlignment="Left" Margin="39,373,0,0" VerticalAlignment="Top" Width="159"/>
+        <CheckBox x:Name="GamingModeCheckBox" Content="" HorizontalAlignment="Left" Margin="143,379,0,0" VerticalAlignment="Top" IsChecked="False"/>
+        <Label x:Name="GamingModeToolTip" Content="Turn off clicking animations for games, animatoins binded to shortuts will stay" HorizontalAlignment="Left" Margin="12,341,0,0" VerticalAlignment="Top" Height="27" Width="423" Grid.Row="0" Visibility="Hidden" Background="#FFEFE147"/>
 
     </Grid>
 </Window>

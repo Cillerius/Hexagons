@@ -1,31 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\",
+  "WorkspaceRootPath": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\",
   "Documents": [
     {
-<<<<<<< Updated upstream
-      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|d:\\self_made_programs\\githexagons\\hexagons\\hexagons\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-=======
->>>>>>> Stashed changes
-      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|d:\\self_made_programs\\githexagons\\hexagons\\hexagons\\tools.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\tools.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:tools.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|d:\\self_made_programs\\githexagons\\hexagons\\hexagons\\tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-<<<<<<< Updated upstream
-=======
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|d:\\self_made_programs\\githexagons\\hexagons\\hexagons\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Stashed changes
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|d:\\self_made_programs\\githexagons\\hexagons\\hexagons\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -36,67 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< Updated upstream
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-=======
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
->>>>>>> Stashed changes
-              "Title": "Tools.xaml",
-              "DocumentMoniker": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml",
-              "RelativeDocumentMoniker": "Tools.xaml",
-              "ToolTip": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml",
-              "RelativeToolTip": "Tools.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-07T12:55:53.633Z",
-              "IsPinned": true
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Tools.xaml.cs",
-              "DocumentMoniker": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml.cs",
-              "RelativeDocumentMoniker": "Tools.xaml.cs",
-              "ToolTip": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml.cs",
-              "RelativeToolTip": "Tools.xaml.cs",
-<<<<<<< Updated upstream
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAIAAAAAAAAAA==",
-=======
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoBAAABAAAAAAAAAA==",
->>>>>>> Stashed changes
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T12:55:54.251Z",
+              "Title": "Tools.xaml",
+              "DocumentMoniker": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml",
+              "RelativeDocumentMoniker": "Tools.xaml",
+              "ToolTip": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml*",
+              "RelativeToolTip": "Tools.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-18T18:04:57.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAIwBsDAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Tools.xaml.cs",
+              "DocumentMoniker": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml.cs",
+              "RelativeDocumentMoniker": "Tools.xaml.cs",
+              "ToolTip": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml.cs",
+              "RelativeToolTip": "Tools.xaml.cs",
+              "ViewState": "AgIAANoAAAAAAAAAAAAwwPcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T12:55:49.764Z"
+              "WhenOpened": "2025-07-18T18:04:57.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAvwK4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T18:04:57.192Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml",
+              "DocumentMoniker": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml",
+              "ToolTip": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-07T12:55:48.939Z",
+              "WhenOpened": "2025-07-18T18:04:57.193Z",
               "EditorCaption": ""
             }
           ]

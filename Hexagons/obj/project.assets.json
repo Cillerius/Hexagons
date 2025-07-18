@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Hexagons.csproj",
+      "projectUniqueName": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Hexagons.csproj",
       "projectName": "Hexagons",
-      "projectPath": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Hexagons.csproj",
+      "projectPath": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Hexagons.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\obj\\",
+      "outputPath": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
