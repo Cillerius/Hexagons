@@ -400,6 +400,7 @@
                     <ComboBoxItem Content="Wave" Style="{StaticResource GlassComboBoxItem}"/>
                     <ComboBoxItem Content="Burst" Style="{StaticResource GlassComboBoxItem}"/>
                     <ComboBoxItem Content="Ripple" Style="{StaticResource GlassComboBoxItem}"/>
+                    <ComboBoxItem Content="None"/>
                 </ComboBox>
 
                 <Button x:Name="SavePresetButton" Content="Save Preset" 
@@ -440,6 +441,7 @@
                     <ComboBoxItem Content="Wave" Style="{StaticResource GlassComboBoxItem}"/>
                     <ComboBoxItem Content="Burst" Style="{StaticResource GlassComboBoxItem}"/>
                     <ComboBoxItem Content="Ripple" Style="{StaticResource GlassComboBoxItem}"/>
+                    <ComboBoxItem Content="None"/>
                 </ComboBox>
 
                 <CheckBox x:Name="GameModeCheckBox" Content="Game mode" 

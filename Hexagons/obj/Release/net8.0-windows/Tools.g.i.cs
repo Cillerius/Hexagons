@@ -341,7 +341,7 @@ namespace Hexagons {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Hexagons;component/tools.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Hexagons;V1.0.0.0;component/tools.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Tools.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

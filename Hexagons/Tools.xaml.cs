@@ -38,6 +38,8 @@ namespace Hexagons
             UpdateDelaySlider.Value = MainWindow._config.UpdateDelayMs;
             HexagonRadiusSlider.Value = MainWindow._config.Radius;
             RippleDuratonSlider.Value = MainWindow._config.RippleSpeedMs;
+
+            //animation selection
             ResetAnimationCombobox.SelectedIndex = MainWindow._resetHexagonsAnimation;
             CloseToolsAnimationCombobox.SelectedIndex = MainWindow._closeToolsAnimation;
 
@@ -66,6 +68,8 @@ namespace Hexagons
                 MainWindow._config.UpdateDelayMs = (int)UpdateDelaySlider.Value;
                 MainWindow._config.Radius = (int)HexagonRadiusSlider.Value;
                 MainWindow._config.RippleSpeedMs = (int)RippleDuratonSlider.Value;
+
+                //animation selection
                 MainWindow._resetHexagonsAnimation = ResetAnimationCombobox.SelectedIndex;
                 MainWindow._closeToolsAnimation = CloseToolsAnimationCombobox.SelectedIndex;
 
@@ -90,20 +94,27 @@ namespace Hexagons
 
                 MainWindow.DrawHexagonGrid();
                 //Start animation to reset hexagons
-                if (ResetAnimationCombobox.SelectedIndex == 1)
+                switch (MainWindow._resetHexagonsAnimation)
                 {
-                    Debug.WriteLine("Animating Burst (AnimateAllHexagons()");
-                    MainWindow.AnimateAllHexagons();
-                }
-                else if (ResetAnimationCombobox.SelectedIndex == 2)
-                {
-                    MainWindow.StartRipple(new Point(
-    SystemParameters.PrimaryScreenWidth / 2,
-    SystemParameters.PrimaryScreenHeight / 2));
-                }
-                else
-                {
-                    MainWindow.StartWaveAnimation();
+                    //animAll
+                    case 1:
+                        MainWindow.AnimateAllHexagons();
+                        break;
+
+                    //ripple
+                    case 2:
+                        MainWindow.StartRipple(new Point(
+                        SystemParameters.PrimaryScreenWidth / 2,
+                        SystemParameters.PrimaryScreenHeight / 2));
+                        break;
+
+                    //none
+                    case 3:
+
+                        break;
+                    default:
+                        MainWindow.StartWaveAnimation();
+                        break;
                 }
                 HexagonCounter.Content = "Hexagon count: " + MainWindow._hexagons.Count();
             }

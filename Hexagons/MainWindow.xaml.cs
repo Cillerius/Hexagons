@@ -568,13 +568,21 @@ namespace Hexagons
         {
             switch (_closeToolsAnimation)
             {
+                //animAll
                 case 1:
                     AnimateAllHexagons();
                     break;
+
+                //ripple
                 case 2:
                     StartRipple(new Point(
     SystemParameters.PrimaryScreenWidth / 2,
     SystemParameters.PrimaryScreenHeight / 2));
+                    break;
+
+                //none
+                case 3:
+
                     break;
                 default:
                     StartWaveAnimation();
@@ -587,13 +595,21 @@ namespace Hexagons
             tools.ShowDialog();
             switch (_closeToolsAnimation)
             {
+                //animAll
                 case 1:
                     AnimateAllHexagons();
                     break;
+
+                //ripple
                 case 2:
                     StartRipple(new Point(
     SystemParameters.PrimaryScreenWidth / 2,
     SystemParameters.PrimaryScreenHeight / 2));
+                    break;
+
+                //none
+                case 3:
+
                     break;
                 default:
                     StartWaveAnimation();
