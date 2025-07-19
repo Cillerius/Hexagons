@@ -134,7 +134,7 @@ namespace Hexagons
                 Save("HexagonRadius", (int)HexagonRadiusSlider.Value);
                 Save("RippleDuration", (int)RippleDuratonSlider.Value);
 
-                //Tools Animations
+                //Animation selection
                 Save("ResetHexagonsAnimation", ResetAnimationCombobox.SelectedIndex);
                 Save("CloseToolsAnimation", CloseToolsAnimationCombobox.SelectedIndex);
 
@@ -171,7 +171,7 @@ namespace Hexagons
                 MainWindow._config.Radius = Load("HexagonRadius", 50);
                 MainWindow._config.RippleSpeedMs = Load("RippleDuration", 20);
 
-                //Tools Animations
+                //Animation selection
                 MainWindow._resetHexagonsAnimation = Load("ResetHexagonsAnimation", 0);
                 MainWindow._closeToolsAnimation = Load("CloseToolsAnimation", 0);
 
