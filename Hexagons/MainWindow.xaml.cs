@@ -175,6 +175,30 @@ namespace Hexagons
             _mouseHook?.Unhook();
             _keyboardHook?.Unhook();
         }
+        public void UpdateTimerIntervals()
+        {
+            if (_holdTimer != null)
+            {
+                bool wasRunning = _holdTimer.IsEnabled;
+                _holdTimer.Stop();
+                _holdTimer.Interval = TimeSpan.FromMilliseconds(_config.UpdateDelayMs);
+                if (wasRunning)
+                {
+                    _holdTimer.Start();
+                }
+            }
+
+            if (_waveTimer != null)
+            {
+                bool wasRunning = _waveTimer.IsEnabled;
+                _waveTimer.Stop();
+                _waveTimer.Interval = TimeSpan.FromMilliseconds(_config.WaveSpeedMs);
+                if (wasRunning)
+                {
+                    _waveTimer.Start();
+                }
+            }
+        }
         #endregion
 
         #region Input Event Handlers

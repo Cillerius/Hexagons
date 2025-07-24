@@ -98,6 +98,7 @@ namespace Hexagons
                 //Constant trail 
                 MainWindow._config.ConstantTrail = constantTrailCheckbox.IsChecked.Value;
 
+                MainWindow.UpdateTimerIntervals();
                 MainWindow.DrawHexagonGrid();
                 //Start animation to reset hexagons
                 switch (MainWindow._resetHexagonsAnimation)
