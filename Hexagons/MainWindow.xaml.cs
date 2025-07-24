@@ -52,6 +52,8 @@ namespace Hexagons
         public int RippleSpeedMs { get; set; } = 20;
 
         public bool GameMode = false;
+
+        public bool ConstantTrail;
     }
 
     public static class KeyCombinations
@@ -138,6 +140,11 @@ namespace Hexagons
             this.Activate();
 
             Closed += OnWindowClosed;
+
+            if (_config.ConstantTrail && !_holdTimer.IsEnabled)
+            {
+                _holdTimer.Start();
+            }
         }
 
         private void MakeWindowClickThrough()
@@ -198,7 +205,10 @@ namespace Hexagons
             {
                 Debug.WriteLine($"Mouse up at: {screenPoint.X}, {screenPoint.Y}");
                 _isMouseDown = false;
-                _holdTimer.Stop();
+                if (!_config.ConstantTrail)
+                {
+                    _holdTimer.Stop();
+                }
             }
             catch (Exception ex)
             {
@@ -210,7 +220,7 @@ namespace Hexagons
         {
             try
             {
-                if (_isMouseDown)
+                if (_isMouseDown || _config.ConstantTrail)
                 {
                     _currentMousePosition = screenPoint;
                 }
@@ -294,7 +304,7 @@ namespace Hexagons
 
         private void OnHoldTimerTick(object sender, EventArgs e)
         {
-            if (_isMouseDown)
+            if (_isMouseDown || _config.ConstantTrail)
             {
                 TriggerGlowAtPosition(_currentMousePosition);
             }

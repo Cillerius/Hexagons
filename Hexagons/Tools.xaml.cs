@@ -57,6 +57,9 @@ namespace Hexagons
 
             //gameMode
             GameModeCheckBox.IsChecked = MainWindow._config.GameMode;
+
+            //constant trail
+            constantTrailCheckbox.IsChecked = MainWindow._config.ConstantTrail;
         }
 
         public void ApplyChanges()
@@ -91,6 +94,9 @@ namespace Hexagons
 
                 //Game mode
                 MainWindow._config.GameMode = GameModeCheckBox.IsChecked.Value;
+
+                //Constant trail 
+                MainWindow._config.ConstantTrail = constantTrailCheckbox.IsChecked.Value;
 
                 MainWindow.DrawHexagonGrid();
                 //Start animation to reset hexagons
@@ -153,6 +159,9 @@ namespace Hexagons
                 //game mode
                 Save("GameMode", GameModeCheckBox.IsChecked.Value);
 
+                //constant trail
+                Save("ConstantTrail", constantTrailCheckbox.IsChecked.Value);
+
                 ApplyChanges();
             }
             catch (Exception ex)
@@ -192,8 +201,10 @@ namespace Hexagons
                 );
 
                 //game mode
-
                 MainWindow._config.GameMode = Load("GameMode", false);
+
+                //constant trail
+                MainWindow._config.ConstantTrail = Load("ConstantTrail", false);
 
                 // Update the UI controls with loaded values
                 LoadFromRam();

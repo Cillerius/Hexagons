@@ -395,7 +395,7 @@
 
                 <ComboBox x:Name="ResetAnimationCombobox" 
                           Style="{StaticResource GlassComboBox}"
-                          HorizontalAlignment="Left" Margin="168,395,0,0" VerticalAlignment="Top" 
+                          HorizontalAlignment="Left" Margin="341,391,0,0" VerticalAlignment="Top" 
                           Width="120" SelectedIndex="0">
                     <ComboBoxItem Content="Wave" Style="{StaticResource GlassComboBoxItem}"/>
                     <ComboBoxItem Content="Burst" Style="{StaticResource GlassComboBoxItem}"/>
@@ -436,7 +436,7 @@
 
                 <ComboBox x:Name="CloseToolsAnimationCombobox" 
                           Style="{StaticResource GlassComboBox}"
-                          HorizontalAlignment="Left" Margin="293,395,0,0" VerticalAlignment="Top" 
+                          HorizontalAlignment="Left" Margin="341,353,0,0" VerticalAlignment="Top" 
                           Width="120" SelectedIndex="0">
                     <ComboBoxItem Content="Wave" Style="{StaticResource GlassComboBoxItem}"/>
                     <ComboBoxItem Content="Burst" Style="{StaticResource GlassComboBoxItem}"/>
@@ -447,6 +447,15 @@
                 <CheckBox x:Name="GameModeCheckBox" Content="Game mode" 
                           Style="{StaticResource GlassCheckBox}"
                           HorizontalAlignment="Left" Margin="38,353,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name="constantTrailCheckbox" Content="Constant trail" 
+                    Style="{StaticResource GlassCheckBox}"
+                    HorizontalAlignment="Left" Margin="38,332,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="ResetHexagonsLable" Content="Reset hexagons animation" 
+                    Style="{StaticResource GlassLabel}"
+                    HorizontalAlignment="Left" Margin="181,391,0,0" VerticalAlignment="Top" Width="155"/>
+                <Label x:Name="Close_OpenToolsAnimationLable" Content="Open/Close Tools animation" 
+                    Style="{StaticResource GlassLabel}"
+                    HorizontalAlignment="Left" Margin="168,352,0,0" VerticalAlignment="Top" Width="168"/>
             </Grid>
         </Border>
     </Grid>
