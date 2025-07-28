@@ -456,6 +456,17 @@
                 <Label x:Name="Close_OpenToolsAnimationLable" Content="Open/Close Tools animation" 
                     Style="{StaticResource GlassLabel}"
                     HorizontalAlignment="Left" Margin="168,352,0,0" VerticalAlignment="Top" Width="168"/>
+                <CheckBox x:Name="RotatingHexagonsCheckbox" Content="Rotating hexes" 
+                    Style="{StaticResource GlassCheckBox}"
+                    HorizontalAlignment="Left" Margin="38,311,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="RotationSpeedLabel" Content="Rotation speed" 
+                    Style="{StaticResource GlassLabel}"
+                    HorizontalAlignment="Left" Margin="64,243,0,0" VerticalAlignment="Top" Width="159"/>
+                <Slider x:Name="RotationSpeedSlider" 
+                    Style="{StaticResource GlassSlider}"
+                    HorizontalAlignment="Left" Margin="228,250,0,0" VerticalAlignment="Top" 
+                    Width="150" Minimum="0.1" RenderTransformOrigin="0.642,0.612" 
+                    SmallChange="1" Value="50" Maximum="8"/>
             </Grid>
         </Border>
     </Grid>

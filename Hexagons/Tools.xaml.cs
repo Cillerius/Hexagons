@@ -60,6 +60,10 @@ namespace Hexagons
 
             //constant trail
             constantTrailCheckbox.IsChecked = MainWindow._config.ConstantTrail;
+
+            //rotation
+            RotationSpeedSlider.Value = MainWindow._config.RotationSpeed;
+            RotatingHexagonsCheckbox.IsChecked = MainWindow._config.RotationEnabled;
         }
 
         public void ApplyChanges()
@@ -97,6 +101,12 @@ namespace Hexagons
 
                 //Constant trail 
                 MainWindow._config.ConstantTrail = constantTrailCheckbox.IsChecked.Value;
+
+                //rotation
+                MainWindow._config.RotationEnabled = RotatingHexagonsCheckbox.IsChecked.Value;
+                MainWindow._config.RotationSpeed = RotationSpeedSlider.Value;
+
+                MainWindow.UpdateRotationSpeed();
 
                 MainWindow.UpdateTimerIntervals();
                 MainWindow.DrawHexagonGrid();
@@ -163,6 +173,11 @@ namespace Hexagons
                 //constant trail
                 Save("ConstantTrail", constantTrailCheckbox.IsChecked.Value);
 
+                //rotation
+                Save("RotationEnabled", RotatingHexagonsCheckbox.IsChecked.Value);
+                Save("RotationSpeed", RotationSpeedSlider.Value);
+
+
                 ApplyChanges();
             }
             catch (Exception ex)
@@ -206,6 +221,10 @@ namespace Hexagons
 
                 //constant trail
                 MainWindow._config.ConstantTrail = Load("ConstantTrail", false);
+
+                //rotation
+                MainWindow._config.RotationEnabled = Load("rotationEnabled", false);
+                MainWindow._config.RotationSpeed = Load("rotationSpeed", 2);
 
                 // Update the UI controls with loaded values
                 LoadFromRam();

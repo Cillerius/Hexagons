@@ -53,7 +53,13 @@ namespace Hexagons
 
         public bool GameMode = false;
 
-        public bool ConstantTrail;
+        public bool ConstantTrail = false;
+
+        //rotation
+        public bool RotationEnabled { get; set; } = false;
+        public double RotationSpeed { get; set; } = 2.0; // Rotations per minute (RPM)
+
+
     }
 
     public static class KeyCombinations
@@ -81,12 +87,12 @@ namespace Hexagons
         private MouseHook _mouseHook;
         private KeyboardHook _keyboardHook;
         private DispatcherTimer _holdTimer;
-        private DispatcherTimer _waveTimer;
+
+        private HexagonGrid _hexagonGrid;
+        private AnimationManager _animationManager;
 
         private bool _isMouseDown = false;
         private Point _currentMousePosition;
-        private bool _isWaveActive = false;
-        private int _currentWaveColumn = 0;
         public int _resetHexagonsAnimation = 0;
         public int _closeToolsAnimation = 0;
         private bool _isCapsLockGlowing = false;
@@ -96,10 +102,17 @@ namespace Hexagons
         public MainWindow()
         {
             InitializeComponent();
+            InitializeManagers();
             InitializeWindow();
             InitializeTimers();
 
             Loaded += OnWindowLoaded;
+        }
+
+        private void InitializeManagers()
+        {
+            _hexagonGrid = new HexagonGrid(_config, MainCanvas);
+            _animationManager = new AnimationManager(_config);
         }
 
         private void InitializeWindow()
@@ -122,12 +135,6 @@ namespace Hexagons
                 Interval = TimeSpan.FromMilliseconds(_config.UpdateDelayMs)
             };
             _holdTimer.Tick += OnHoldTimerTick;
-
-            _waveTimer = new DispatcherTimer
-            {
-                Interval = TimeSpan.FromMilliseconds(_config.WaveSpeedMs)
-            };
-            _waveTimer.Tick += OnWaveTimerTick;
         }
 
         private void OnWindowLoaded(object sender, RoutedEventArgs e)
@@ -171,10 +178,11 @@ namespace Hexagons
         private void OnWindowClosed(object sender, EventArgs e)
         {
             _holdTimer?.Stop();
-            _waveTimer?.Stop();
+            _animationManager?.StopAllAnimations();
             _mouseHook?.Unhook();
             _keyboardHook?.Unhook();
         }
+
         public void UpdateTimerIntervals()
         {
             if (_holdTimer != null)
@@ -188,16 +196,12 @@ namespace Hexagons
                 }
             }
 
-            if (_waveTimer != null)
-            {
-                bool wasRunning = _waveTimer.IsEnabled;
-                _waveTimer.Stop();
-                _waveTimer.Interval = TimeSpan.FromMilliseconds(_config.WaveSpeedMs);
-                if (wasRunning)
-                {
-                    _waveTimer.Start();
-                }
-            }
+            _animationManager?.UpdateTimerIntervals();
+        }
+
+        public void UpdateRotationSpeed()
+        {
+            _animationManager?.UpdateRotationSpeed();
         }
         #endregion
 
@@ -220,7 +224,6 @@ namespace Hexagons
                     Debug.WriteLine($"Error in mouse down: {ex.Message}");
                 }
             }
-
         }
 
         private void OnMouseUp(Point screenPoint)
@@ -281,8 +284,8 @@ namespace Hexagons
             else if (vkCode == KeyCombinations.KEY_R && ctrl && shift)
             {
                 StartRipple(new Point(
-    SystemParameters.PrimaryScreenWidth / 2,
-    SystemParameters.PrimaryScreenHeight / 2));
+                    SystemParameters.PrimaryScreenWidth / 2,
+                    SystemParameters.PrimaryScreenHeight / 2));
             }
             // caps lock toggled
             else if (vkCode == KeyCombinations.KEY_CAPS)
@@ -303,18 +306,15 @@ namespace Hexagons
                     {
                         if (_isCapsLockGlowing)
                         {
-                            ToggleHexGlow(closestHex);
+                            _animationManager.ToggleHexGlow(closestHex);
                         }
                         else
                         {
-                            UnToggleHexGlow(closestHex);
+                            _animationManager.UnToggleHexGlow(closestHex);
                         }
                     }
                 });
             }
-
-
-
         }
 
         private void OnKeyDown(object sender, KeyEventArgs e)
@@ -335,57 +335,25 @@ namespace Hexagons
         }
         #endregion
 
-        #region Animation Methods
+        #region Animation Wrapper Methods
         public void StartWaveAnimation()
         {
-            if (_isWaveActive) return;
-
-            try
-            {
-                Debug.WriteLine("Starting wave animation");
-                _waveTimer.Interval = TimeSpan.FromMilliseconds(_config.WaveSpeedMs);
-                _isWaveActive = true;
-                _currentWaveColumn = 0;
-                _waveTimer.Start();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error starting wave: {ex.Message}");
-            }
+            _animationManager.StartWaveAnimation(_hexagonColumns);
         }
 
-        private void OnWaveTimerTick(object sender, EventArgs e)
+        public void AnimateAllHexagons()
         {
-            try
-            {
-                if (_currentWaveColumn >= _hexagonColumns.Count)
-                {
-                    StopWaveAnimation();
-                    return;
-                }
-
-                var column = _hexagonColumns[_currentWaveColumn];
-                foreach (var hex in column)
-                {
-                    AnimateHexagonGlow(hex);
-                }
-
-                Debug.WriteLine($"Animated column {_currentWaveColumn} ({column.Count} hexagons)");
-                _currentWaveColumn++;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error in wave timer: {ex.Message}");
-                StopWaveAnimation();
-            }
+            _animationManager.AnimateAllHexagons(_hexagons);
         }
 
-        private void StopWaveAnimation()
+        private void AnimateSomeHexagons()
         {
-            _waveTimer.Stop();
-            _isWaveActive = false;
-            _currentWaveColumn = 0;
-            Debug.WriteLine("Wave animation completed");
+            _animationManager.AnimateSomeHexagons(_hexagons);
+        }
+
+        public void StartRipple(Point origin)
+        {
+            _animationManager.StartRipple(origin, _hexagons);
         }
 
         private void TriggerGlowAtPosition(Point screenPoint)
@@ -396,7 +364,7 @@ namespace Hexagons
 
                 foreach (var hex in _hexagons.Where(h => IsPointInHexagon(h.Points, canvasPoint)))
                 {
-                    AnimateHexagonGlow(hex);
+                    _animationManager.AnimateHexagonGlow(hex);
                 }
             }
             catch (Exception ex)
@@ -404,288 +372,12 @@ namespace Hexagons
                 Debug.WriteLine($"Error triggering glow: {ex.Message}");
             }
         }
-
-        private void AnimateHexagonGlow(Polygon hex)
-        {
-            try
-            {
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    var animationBrush = new SolidColorBrush(_config.PassiveColor);
-                    hex.Fill = animationBrush;
-
-                    var glowAnimation = new ColorAnimation
-                    {
-                        From = _config.PassiveColor,
-                        To = _config.GlowColor,
-                        Duration = TimeSpan.FromMilliseconds(_config.GlowDurationMs),
-                        AutoReverse = true,
-                        EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseInOut }
-                    };
-
-                    animationBrush.BeginAnimation(SolidColorBrush.ColorProperty, glowAnimation);
-                });
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error animating glow: {ex.Message}");
-            }
-        }
-
-        // toggeling glow instead of animating
-        public void ToggleHexGlow(Polygon hex)
-        {
-            try
-            {
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    var animationBrush = new SolidColorBrush(_config.PassiveColor);
-                    hex.Fill = animationBrush;
-
-                    var glowAnimation = new ColorAnimation
-                    {
-                        From = _config.PassiveColor,
-                        To = _config.GlowColor,
-                        Duration = TimeSpan.FromMilliseconds(_config.GlowDurationMs / 2),
-                        EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseIn}
-                    };
-
-                    animationBrush.BeginAnimation(SolidColorBrush.ColorProperty, glowAnimation);
-                });
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error animating glow: {ex.Message}");
-            }
-        }
-        public void UnToggleHexGlow(Polygon hex)
-        {
-            try
-            {
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    var animationBrush = new SolidColorBrush(_config.PassiveColor);
-                    hex.Fill = animationBrush;
-
-                    var glowAnimation = new ColorAnimation
-                    {
-                        From = _config.GlowColor,
-                        To = _config.PassiveColor,
-                        Duration = TimeSpan.FromMilliseconds(_config.GlowDurationMs / 2),
-                        EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut}
-                    };
-
-                    animationBrush.BeginAnimation(SolidColorBrush.ColorProperty, glowAnimation);
-                });
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error animating glow: {ex.Message}");
-            }
-        }
-
-
-        public void AnimateAllHexagons()
-        {
-            foreach (var hex in _hexagons)
-            {
-                AnimateHexagonGlow(hex);
-            }
-        }
-
-        private void AnimateSomeHexagons()
-        {
-            var random = new Random();
-            int count = _hexagons.Count / 2;
-
-            for (int i = 0; i < count; i++)
-            {
-                var randomHex = _hexagons[random.Next(_hexagons.Count)];
-                AnimateHexagonGlow(randomHex);
-            }
-        }
-
-        public void StartRipple(Point origin)
-        {
-            double maxRadius = Math.Sqrt(SystemParameters.PrimaryScreenWidth * SystemParameters.PrimaryScreenWidth +
-                                         SystemParameters.PrimaryScreenHeight * SystemParameters.PrimaryScreenHeight);
-
-            double step = 20; // how fast the ring grows (pixels per frame)
-            double currentRadius = 0;
-
-            HashSet<Polygon> alreadyGlowing = new();
-
-            DispatcherTimer rippleTimer = new DispatcherTimer
-            {
-                Interval = TimeSpan.FromMilliseconds(_config.RippleSpeedMs) // Now uses dedicated ripple timing
-            };
-
-            rippleTimer.Tick += (s, e) =>
-            {
-                currentRadius += step;
-
-                foreach (var hex in _hexagons)
-                {
-                    Point hexCenter = GetPolygonCenter(hex);
-                    double distance = GetDistance(origin, hexCenter);
-
-                    if (distance <= currentRadius && !alreadyGlowing.Contains(hex))
-                    {
-                        AnimateHexagonGlow(hex);
-                        alreadyGlowing.Add(hex);
-                    }
-                }
-
-                if (currentRadius >= maxRadius)
-                {
-                    rippleTimer.Stop();
-                }
-            };
-
-            rippleTimer.Start();
-        }
-
         #endregion
 
-        #region Hexagon Grid Creation
+        #region Hexagon Grid Wrapper Methods
         public void DrawHexagonGrid()
         {
-            try
-            {
-                double screenWidth = SystemParameters.PrimaryScreenWidth;
-                double screenHeight = SystemParameters.PrimaryScreenHeight;
-
-                Debug.WriteLine($"Drawing grid - Screen: {screenWidth}x{screenHeight}");
-
-                ClearGrid();
-
-                var spacing = CalculateHexagonSpacing();
-                CreateHexagonColumns(screenWidth, spacing.horizontal);
-                PopulateHexagonGrid(screenWidth, screenHeight, spacing);
-
-                Debug.WriteLine($"Created {_hexagons.Count} hexagons in {_hexagonColumns.Count} columns");
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error drawing grid: {ex.Message}");
-            }
-        }
-
-        private void ClearGrid()
-        {
-            MainCanvas.Children.Clear();
-            _hexagons.Clear();
-            _hexagonColumns.Clear();
-        }
-
-        private (double horizontal, double vertical) CalculateHexagonSpacing()
-        {
-            return (
-                horizontal: _config.Radius * 1.5,
-                vertical: _config.Height * 0.75
-            );
-        }
-
-        private void CreateHexagonColumns(double screenWidth, double horizontalSpacing)
-        {
-            int numColumns = (int)Math.Ceiling((screenWidth + 2 * _config.Radius) / horizontalSpacing) + 1;
-            for (int i = 0; i < numColumns; i++)
-            {
-                _hexagonColumns.Add(new List<Polygon>());
-            }
-        }
-
-        private void PopulateHexagonGrid(double screenWidth, double screenHeight,
-            (double horizontal, double vertical) spacing)
-        {
-            // Start from outside screen bounds to ensure full coverage
-            double startX = -_config.Radius * 2;
-            double endX = screenWidth + _config.Radius * 2;
-            double startY = -_config.Height;
-            double endY = screenHeight + _config.Height;
-
-            int rowIndex = 0;
-
-            // Iterate through rows (Y positions)
-            for (double y = startY; y < endY; y += spacing.vertical)
-            {
-                int columnIndex = 0;
-                bool isOddRow = rowIndex % 2 == 1;
-
-                // Calculate X offset for odd rows to create hexagonal pattern
-                double rowXOffset = isOddRow ? spacing.horizontal * 0.5 : 0;
-
-                // Iterate through columns in this row (X positions)
-                for (double x = startX; x < endX; x += spacing.horizontal)
-                {
-                    double actualX = x + rowXOffset;
-                    var hex = CreateHexagon(actualX, y);
-
-                    _hexagons.Add(hex);
-                    MainCanvas.Children.Add(hex);
-
-                    // Add to column list (use column index based on actual position)
-                    int actualColumnIndex = (int)((actualX + _config.Radius) / spacing.horizontal);
-
-                    // Ensure we have enough columns
-                    while (_hexagonColumns.Count <= actualColumnIndex)
-                    {
-                        _hexagonColumns.Add(new List<Polygon>());
-                    }
-
-                    if (actualColumnIndex >= 0 && actualColumnIndex < _hexagonColumns.Count)
-                    {
-                        _hexagonColumns[actualColumnIndex].Add(hex);
-                    }
-
-                    columnIndex++;
-                }
-                rowIndex++;
-            }
-        }
-
-        private (double x, double y) CalculateHexagonPosition(double x, double y,
-            (double horizontal, double vertical) spacing)
-        {
-            int rowIndex = (int)(y / spacing.vertical);
-            bool isOddRow = rowIndex % 2 == 1;
-
-            return (
-                x: x + (isOddRow ? spacing.horizontal * 0.5 : 0),
-                y: y
-            );
-        }
-
-        private Polygon CreateHexagon(double centerX, double centerY)
-        {
-            var hex = new Polygon
-            {
-                Points = GenerateHexagonPoints(centerX, centerY),
-                Stroke = Brushes.Transparent,
-                StrokeThickness = 0,
-                Fill = Brushes.Transparent,
-                Tag = false
-            };
-
-            return hex;
-        }
-
-        private PointCollection GenerateHexagonPoints(double centerX, double centerY)
-        {
-            var points = new PointCollection();
-
-            for (int i = 0; i < 6; i++)
-            {
-                double angleDegrees = 60 * i - 30;
-                double angleRadians = Math.PI / 180 * angleDegrees;
-
-                double x = centerX + _config.Radius * Math.Cos(angleRadians);
-                double y = centerY + _config.Radius * Math.Sin(angleRadians);
-
-                points.Add(new Point(x, y));
-            }
-
-            return points;
+            _hexagonGrid.DrawHexagonGrid(_hexagons, _hexagonColumns);
         }
         #endregion
 
@@ -724,8 +416,8 @@ namespace Hexagons
                 //ripple
                 case 2:
                     StartRipple(new Point(
-    SystemParameters.PrimaryScreenWidth / 2,
-    SystemParameters.PrimaryScreenHeight / 2));
+                        SystemParameters.PrimaryScreenWidth / 2,
+                        SystemParameters.PrimaryScreenHeight / 2));
                     break;
 
                 //none
@@ -751,8 +443,8 @@ namespace Hexagons
                 //ripple
                 case 2:
                     StartRipple(new Point(
-    SystemParameters.PrimaryScreenWidth / 2,
-    SystemParameters.PrimaryScreenHeight / 2));
+                        SystemParameters.PrimaryScreenWidth / 2,
+                        SystemParameters.PrimaryScreenHeight / 2));
                     break;
 
                 //none
@@ -783,7 +475,6 @@ namespace Hexagons
             return Math.Sqrt(dx * dx + dy * dy);
         }
 
-
         private Polygon FindClosestHexagon(Point targetPosition)
         {
             Polygon closestHex = null;
@@ -799,7 +490,7 @@ namespace Hexagons
                     minDistance = distance;
                     closestHex = hex;
                 }
-            }    
+            }
 
             return closestHex;
         }

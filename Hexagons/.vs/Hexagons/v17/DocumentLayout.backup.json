@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\tools.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:tools.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\tools.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:tools.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\hexagongrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:hexagongrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|solutionrelative:tools.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2E4368D-5778-40F6-9DF9-E0CEC6DEE4E6}|Hexagons.csproj|e:\\self_made_programs\\githexagons\\hexagons\\hexagons\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -30,11 +38,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T07:07:11.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AnimationManager.cs",
+              "DocumentMoniker": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\AnimationManager.cs",
+              "RelativeDocumentMoniker": "AnimationManager.cs",
+              "ToolTip": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\AnimationManager.cs",
+              "RelativeToolTip": "AnimationManager.cs",
+              "ViewState": "AgIAACgBAAAAAAAAAAAIwEgBAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T06:34:01.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HexagonGrid.cs",
+              "DocumentMoniker": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\HexagonGrid.cs",
+              "RelativeDocumentMoniker": "HexagonGrid.cs",
+              "ToolTip": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\HexagonGrid.cs",
+              "RelativeToolTip": "HexagonGrid.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAIwHYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T06:33:46.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "App.xaml",
               "DocumentMoniker": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -46,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Tools.xaml",
               "DocumentMoniker": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml",
               "RelativeDocumentMoniker": "Tools.xaml",
@@ -58,40 +105,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Tools.xaml.cs",
               "DocumentMoniker": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml.cs",
               "RelativeDocumentMoniker": "Tools.xaml.cs",
               "ToolTip": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\Tools.xaml.cs",
               "RelativeToolTip": "Tools.xaml.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAwwG4AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-18T18:04:57.189Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAJ0AAAAAAAAAAAAqwLEAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAJABAAAAAAAAAAAYwKIBAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-18T18:04:57.192Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "E:\\self_made_programs\\gitHexagons\\Hexagons\\Hexagons\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-18T18:04:57.193Z"
             }
           ]
         }
