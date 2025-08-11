@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -17,21 +18,21 @@ namespace Hexagons
             _canvas = canvas;
         }
 
-        public void DrawHexagonGrid(System.Collections.Generic.List<Polygon> hexagons, 
+        public void DrawHexagonGrid(System.Collections.Generic.List<Polygon> hexagons,
             System.Collections.Generic.List<System.Collections.Generic.List<Polygon>> hexagonColumns)
         {
             try
             {
-                double screenWidth = SystemParameters.PrimaryScreenWidth;
-                double screenHeight = SystemParameters.PrimaryScreenHeight;
+                // Get the total bounds of all monitors
+                var totalBounds = MultiMonitorHelper.GetTotalScreenBounds();
 
-                Debug.WriteLine($"Drawing grid - Screen: {screenWidth}x{screenHeight}");
+                Debug.WriteLine($"Drawing grid - Total bounds: {totalBounds.Width}x{totalBounds.Height} at ({totalBounds.Left}, {totalBounds.Top})");
 
                 ClearGrid(hexagons, hexagonColumns);
 
                 var spacing = CalculateHexagonSpacing();
-                CreateHexagonColumns(screenWidth, spacing.horizontal, hexagonColumns);
-                PopulateHexagonGrid(screenWidth, screenHeight, spacing, hexagons, hexagonColumns);
+                CreateHexagonColumns(totalBounds.Width, spacing.horizontal, hexagonColumns);
+                PopulateHexagonGrid(totalBounds, spacing, hexagons, hexagonColumns);
 
                 Debug.WriteLine($"Created {hexagons.Count} hexagons in {hexagonColumns.Count} columns");
             }
@@ -41,7 +42,7 @@ namespace Hexagons
             }
         }
 
-        private void ClearGrid(System.Collections.Generic.List<Polygon> hexagons, 
+        private void ClearGrid(System.Collections.Generic.List<Polygon> hexagons,
             System.Collections.Generic.List<System.Collections.Generic.List<Polygon>> hexagonColumns)
         {
             _canvas.Children.Clear();
@@ -57,26 +58,26 @@ namespace Hexagons
             );
         }
 
-        private void CreateHexagonColumns(double screenWidth, double horizontalSpacing, 
+        private void CreateHexagonColumns(double totalWidth, double horizontalSpacing,
             System.Collections.Generic.List<System.Collections.Generic.List<Polygon>> hexagonColumns)
         {
-            int numColumns = (int)Math.Ceiling((screenWidth + 2 * _config.Radius) / horizontalSpacing) + 1;
+            int numColumns = (int)Math.Ceiling((totalWidth + 2 * _config.Radius) / horizontalSpacing) + 1;
             for (int i = 0; i < numColumns; i++)
             {
                 hexagonColumns.Add(new System.Collections.Generic.List<Polygon>());
             }
         }
 
-        private void PopulateHexagonGrid(double screenWidth, double screenHeight,
+        private void PopulateHexagonGrid(Rect totalBounds,
             (double horizontal, double vertical) spacing,
             System.Collections.Generic.List<Polygon> hexagons,
             System.Collections.Generic.List<System.Collections.Generic.List<Polygon>> hexagonColumns)
         {
-            // Start from outside screen bounds to ensure full coverage
-            double startX = -_config.Radius * 2;
-            double endX = screenWidth + _config.Radius * 2;
-            double startY = -_config.Height;
-            double endY = screenHeight + _config.Height;
+            // Start from outside screen bounds to ensure full coverage across all monitors
+            double startX = totalBounds.Left - _config.Radius * 2;
+            double endX = totalBounds.Right + _config.Radius * 2;
+            double startY = totalBounds.Top - _config.Height;
+            double endY = totalBounds.Bottom + _config.Height;
 
             int rowIndex = 0;
 
@@ -93,13 +94,18 @@ namespace Hexagons
                 for (double x = startX; x < endX; x += spacing.horizontal)
                 {
                     double actualX = x + rowXOffset;
-                    var hex = CreateHexagon(actualX, y);
+
+                    // Convert to canvas coordinates (relative to the window's position)
+                    double canvasX = actualX - totalBounds.Left;
+                    double canvasY = y - totalBounds.Top;
+
+                    var hex = CreateHexagon(canvasX, canvasY);
 
                     hexagons.Add(hex);
                     _canvas.Children.Add(hex);
 
                     // Add to column list (use column index based on actual position)
-                    int actualColumnIndex = (int)((actualX + _config.Radius) / spacing.horizontal);
+                    int actualColumnIndex = (int)((actualX - totalBounds.Left + _config.Radius) / spacing.horizontal);
 
                     // Ensure we have enough columns
                     while (hexagonColumns.Count <= actualColumnIndex)

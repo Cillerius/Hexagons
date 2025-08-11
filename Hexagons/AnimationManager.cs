@@ -288,8 +288,8 @@ namespace Hexagons
 
         public void StartRipple(Point origin, List<Polygon> hexagons)
         {
-            double maxRadius = Math.Sqrt(SystemParameters.PrimaryScreenWidth * SystemParameters.PrimaryScreenWidth +
-                                         SystemParameters.PrimaryScreenHeight * SystemParameters.PrimaryScreenHeight);
+            // Use multi-monitor aware maximum distance calculation
+            double maxRadius = MultiMonitorHelper.GetMaxScreenDistance();
 
             double step = 20; // how fast the ring grows (pixels per frame)
             double currentRadius = 0;

@@ -5,12 +5,14 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.Pkcs;
 using System.Windows;
+
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+
 
 namespace Hexagons
 {
@@ -58,8 +60,6 @@ namespace Hexagons
         //rotation
         public bool RotationEnabled { get; set; } = false;
         public double RotationSpeed { get; set; } = 2.0; // Rotations per minute (RPM)
-
-
     }
 
     public static class KeyCombinations
@@ -74,6 +74,77 @@ namespace Hexagons
         public const int VK_CONTROL = 0x11;
         public const int VK_MENU = 0x12;    // Alt key
         public const int VK_SHIFT = 0x10;
+    }
+
+    // Multi-monitor support class
+    public static class MultiMonitorHelper
+    {
+        [DllImport("user32.dll")]
+        private static extern bool EnumDisplayMonitors(IntPtr hdc, IntPtr lprcClip, MonitorEnumProc lpfnEnum, IntPtr dwData);
+
+        [DllImport("user32.dll")]
+        private static extern bool GetMonitorInfo(IntPtr hmon, ref MONITORINFO lpmi);
+
+        private delegate bool MonitorEnumProc(IntPtr hMonitor, IntPtr hdcMonitor, ref RECT lprcMonitor, IntPtr dwData);
+
+        [StructLayout(LayoutKind.Sequential)]
+        private struct RECT
+        {
+            public int Left;
+            public int Top;
+            public int Right;
+            public int Bottom;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        private struct MONITORINFO
+        {
+            public int cbSize;
+            public RECT rcMonitor;
+            public RECT rcWork;
+            public uint dwFlags;
+        }
+
+        public static Rect GetTotalScreenBounds()
+        {
+            double left = double.MaxValue, top = double.MaxValue, right = double.MinValue, bottom = double.MinValue;
+            bool hasMonitors = false;
+
+            EnumDisplayMonitors(IntPtr.Zero, IntPtr.Zero, (IntPtr hMonitor, IntPtr hdcMonitor, ref RECT lprcMonitor, IntPtr dwData) =>
+            {
+                hasMonitors = true;
+                left = Math.Min(left, lprcMonitor.Left);
+                top = Math.Min(top, lprcMonitor.Top);
+                right = Math.Max(right, lprcMonitor.Right);
+                bottom = Math.Max(bottom, lprcMonitor.Bottom);
+                return true;
+            }, IntPtr.Zero);
+
+            if (!hasMonitors)
+            {
+                // Fallback to primary screen
+                return new Rect(0, 0, SystemParameters.PrimaryScreenWidth, SystemParameters.PrimaryScreenHeight);
+            }
+
+            return new Rect(left, top, right - left, bottom - top);
+        }
+
+        public static Point GetTotalScreenCenter()
+        {
+            var bounds = GetTotalScreenBounds();
+            return new Point(bounds.Left + bounds.Width / 2, bounds.Top + bounds.Height / 2);
+        }
+
+        public static double GetMaxScreenDistance()
+        {
+            var bounds = GetTotalScreenBounds();
+            return Math.Sqrt(bounds.Width * bounds.Width + bounds.Height * bounds.Height);
+        }
+
+        public static Point GetPrimaryScreenCenter()
+        {
+            return new Point(SystemParameters.PrimaryScreenWidth / 2, SystemParameters.PrimaryScreenHeight / 2);
+        }
     }
     #endregion
 
@@ -121,11 +192,25 @@ namespace Hexagons
             AllowsTransparency = true;
             Background = Brushes.Transparent;
             Topmost = true;
-            WindowState = WindowState.Maximized;
             ShowInTaskbar = false;
             Focusable = true;
 
+            // Set window to cover all monitors
+            SetWindowToAllMonitors();
+
             KeyDown += OnKeyDown;
+        }
+
+        private void SetWindowToAllMonitors()
+        {
+            var totalBounds = MultiMonitorHelper.GetTotalScreenBounds();
+
+            Left = totalBounds.Left;
+            Top = totalBounds.Top;
+            Width = totalBounds.Width;
+            Height = totalBounds.Height;
+
+            WindowState = WindowState.Normal; // Don't use Maximized for multi-monitor
         }
 
         private void InitializeTimers()
@@ -265,39 +350,39 @@ namespace Hexagons
             {
                 Application.Current.Dispatcher.BeginInvoke(StartWaveAnimation);
             }
-            // Ctrl+Shift+T: Open Tools
-            else if (vkCode == KeyCombinations.KEY_T && ctrl && shift)
+            // Ctrl+Alt+Shift+T: Open Tools
+            else if (vkCode == KeyCombinations.KEY_T && ctrl && alt && shift)
             {
                 OpenTools();
             }
-            // Ctrl+Shift+A: Animate all hexagons
-            else if (vkCode == KeyCombinations.KEY_A && ctrl && shift)
+            // Ctrl+Alt+Shift+A: Animate all hexagons
+            else if (vkCode == KeyCombinations.KEY_A && ctrl && alt && shift)
             {
                 AnimateAllHexagons();
             }
-            // Ctrl+Shift+S: Animate Some hexagons
-            else if (vkCode == KeyCombinations.KEY_S && ctrl && shift)
+            // Ctrl+Alt+Shift+S: Animate Some hexagons
+            else if (vkCode == KeyCombinations.KEY_S && ctrl && alt && shift)
             {
                 AnimateSomeHexagons();
             }
-            // Ctrl+Shift+R: Start Ripple animation
-            else if (vkCode == KeyCombinations.KEY_R && ctrl && shift)
+            // Ctrl+Alt+Shift+R: Start Ripple animation
+            else if (vkCode == KeyCombinations.KEY_R && ctrl && alt && shift)
             {
-                StartRipple(new Point(
-                    SystemParameters.PrimaryScreenWidth / 2,
-                    SystemParameters.PrimaryScreenHeight / 2));
+                var center = MultiMonitorHelper.GetTotalScreenCenter();
+                StartRipple(center);
             }
+
             // caps lock toggled
             else if (vkCode == KeyCombinations.KEY_CAPS)
             {
                 Application.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    _isCapsLockGlowing = !_isCapsLockGlowing; // Simply toggle our tracked state
+                    _isCapsLockGlowing = !_isCapsLockGlowing;
 
-                    // Find the hexagon closest to center-top position (with 50px offset from top)
+                    // Find the hexagon closest to center-top of primary monitor
                     Point targetPosition = new Point(
-                        SystemParameters.PrimaryScreenWidth / 2,  // Center horizontally
-                        70  // 50px from top
+                        SystemParameters.PrimaryScreenWidth / 2,
+                        70
                     );
 
                     var closestHex = FindClosestHexagon(targetPosition);
@@ -360,7 +445,11 @@ namespace Hexagons
         {
             try
             {
-                Point canvasPoint = MainCanvas.PointFromScreen(screenPoint);
+                // Convert screen coordinates to canvas coordinates
+                Point canvasPoint = new Point(
+                    screenPoint.X - Left,
+                    screenPoint.Y - Top
+                );
 
                 foreach (var hex in _hexagons.Where(h => IsPointInHexagon(h.Points, canvasPoint)))
                 {
@@ -415,14 +504,12 @@ namespace Hexagons
 
                 //ripple
                 case 2:
-                    StartRipple(new Point(
-                        SystemParameters.PrimaryScreenWidth / 2,
-                        SystemParameters.PrimaryScreenHeight / 2));
+                    var center = MultiMonitorHelper.GetTotalScreenCenter();
+                    StartRipple(center);
                     break;
 
                 //none
                 case 3:
-
                     break;
                 default:
                     StartWaveAnimation();
@@ -442,14 +529,12 @@ namespace Hexagons
 
                 //ripple
                 case 2:
-                    StartRipple(new Point(
-                        SystemParameters.PrimaryScreenWidth / 2,
-                        SystemParameters.PrimaryScreenHeight / 2));
+                    var center = MultiMonitorHelper.GetTotalScreenCenter();
+                    StartRipple(center);
                     break;
 
                 //none
                 case 3:
-
                     break;
                 default:
                     StartWaveAnimation();
@@ -480,10 +565,16 @@ namespace Hexagons
             Polygon closestHex = null;
             double minDistance = double.MaxValue;
 
+            // Convert screen position to canvas position
+            Point canvasPosition = new Point(
+                targetPosition.X - Left,
+                targetPosition.Y - Top
+            );
+
             foreach (var hex in _hexagons)
             {
                 Point hexCenter = GetPolygonCenter(hex);
-                double distance = GetDistance(targetPosition, hexCenter);
+                double distance = GetDistance(canvasPosition, hexCenter);
 
                 if (distance < minDistance)
                 {
