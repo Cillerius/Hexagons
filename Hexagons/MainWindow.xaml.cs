@@ -77,6 +77,7 @@ namespace Hexagons
     }
 
     // Multi-monitor support class
+
     public static class MultiMonitorHelper
     {
         [DllImport("user32.dll")]
@@ -105,34 +106,52 @@ namespace Hexagons
             public uint dwFlags;
         }
 
+        private static List<RECT> _monitorBounds = new List<RECT>();
+
         public static Rect GetTotalScreenBounds()
         {
-            double left = double.MaxValue, top = double.MaxValue, right = double.MinValue, bottom = double.MinValue;
-            bool hasMonitors = false;
+            _monitorBounds.Clear();
 
+            // Enumerate all monitors and collect their bounds
             EnumDisplayMonitors(IntPtr.Zero, IntPtr.Zero, (IntPtr hMonitor, IntPtr hdcMonitor, ref RECT lprcMonitor, IntPtr dwData) =>
             {
-                hasMonitors = true;
-                left = Math.Min(left, lprcMonitor.Left);
-                top = Math.Min(top, lprcMonitor.Top);
-                right = Math.Max(right, lprcMonitor.Right);
-                bottom = Math.Max(bottom, lprcMonitor.Bottom);
+                _monitorBounds.Add(lprcMonitor);
+                Debug.WriteLine($"Found monitor: {lprcMonitor.Left},{lprcMonitor.Top} to {lprcMonitor.Right},{lprcMonitor.Bottom} ({lprcMonitor.Right - lprcMonitor.Left}x{lprcMonitor.Bottom - lprcMonitor.Top})");
                 return true;
             }, IntPtr.Zero);
 
-            if (!hasMonitors)
+            if (_monitorBounds.Count == 0)
             {
                 // Fallback to primary screen
+                Debug.WriteLine("No monitors found, using primary screen");
                 return new Rect(0, 0, SystemParameters.PrimaryScreenWidth, SystemParameters.PrimaryScreenHeight);
             }
 
-            return new Rect(left, top, right - left, bottom - top);
+            // Calculate the bounding rectangle that encompasses all monitors
+            double left = _monitorBounds[0].Left;
+            double top = _monitorBounds[0].Top;
+            double right = _monitorBounds[0].Right;
+            double bottom = _monitorBounds[0].Bottom;
+
+            for (int i = 1; i < _monitorBounds.Count; i++)
+            {
+                left = Math.Min(left, _monitorBounds[i].Left);
+                top = Math.Min(top, _monitorBounds[i].Top);
+                right = Math.Max(right, _monitorBounds[i].Right);
+                bottom = Math.Max(bottom, _monitorBounds[i].Bottom);
+            }
+
+            var totalBounds = new Rect(left, top, right - left, bottom - top);
+            Debug.WriteLine($"Total bounds: {totalBounds}");
+            return totalBounds;
         }
 
         public static Point GetTotalScreenCenter()
         {
             var bounds = GetTotalScreenBounds();
-            return new Point(bounds.Left + bounds.Width / 2, bounds.Top + bounds.Height / 2);
+            var center = new Point(bounds.Left + bounds.Width / 2, bounds.Top + bounds.Height / 2);
+            Debug.WriteLine($"Total screen center: {center}");
+            return center;
         }
 
         public static double GetMaxScreenDistance()
@@ -141,9 +160,23 @@ namespace Hexagons
             return Math.Sqrt(bounds.Width * bounds.Width + bounds.Height * bounds.Height);
         }
 
-        public static Point GetPrimaryScreenCenter()
+        // Convert screen coordinates to canvas coordinates
+        public static Point ScreenToCanvas(Point screenPoint, Rect totalBounds)
         {
-            return new Point(SystemParameters.PrimaryScreenWidth / 2, SystemParameters.PrimaryScreenHeight / 2);
+            return new Point(screenPoint.X - totalBounds.Left, screenPoint.Y - totalBounds.Top);
+        }
+
+        // Convert canvas coordinates to screen coordinates
+        public static Point CanvasToScreen(Point canvasPoint, Rect totalBounds)
+        {
+            return new Point(canvasPoint.X + totalBounds.Left, canvasPoint.Y + totalBounds.Top);
+        }
+
+        // Get all monitor bounds for debugging
+        public static List<Rect> GetAllMonitorBounds()
+        {
+            GetTotalScreenBounds(); // This populates _monitorBounds
+            return _monitorBounds.Select(r => new Rect(r.Left, r.Top, r.Right - r.Left, r.Bottom - r.Top)).ToList();
         }
     }
     #endregion
@@ -203,15 +236,40 @@ namespace Hexagons
 
         private void SetWindowToAllMonitors()
         {
-            var totalBounds = MultiMonitorHelper.GetTotalScreenBounds();
+            try
+            {
+                var totalBounds = MultiMonitorHelper.GetTotalScreenBounds();
 
-            Left = totalBounds.Left;
-            Top = totalBounds.Top;
-            Width = totalBounds.Width;
-            Height = totalBounds.Height;
+                Debug.WriteLine($"Setting window bounds to: {totalBounds}");
 
-            WindowState = WindowState.Normal; // Don't use Maximized for multi-monitor
+                // Ensure the window is positioned and sized to cover all monitors
+                WindowState = WindowState.Normal; // Must be Normal to set custom bounds
+
+                Left = totalBounds.Left;
+                Top = totalBounds.Top;
+                Width = totalBounds.Width;
+                Height = totalBounds.Height;
+
+                // CRITICAL FIX: Ensure Canvas matches window size
+                MainCanvas.Width = totalBounds.Width;
+                MainCanvas.Height = totalBounds.Height;
+
+                Debug.WriteLine($"Window set to: Left={Left}, Top={Top}, Width={Width}, Height={Height}");
+                Debug.WriteLine($"Canvas set to: Width={MainCanvas.Width}, Height={MainCanvas.Height}");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error setting window to all monitors: {ex.Message}");
+                // Fallback to primary screen
+                Left = 0;
+                Top = 0;
+                Width = SystemParameters.PrimaryScreenWidth;
+                Height = SystemParameters.PrimaryScreenHeight;
+                MainCanvas.Width = Width;
+                MainCanvas.Height = Height;
+            }
         }
+
 
         private void InitializeTimers()
         {
@@ -224,19 +282,23 @@ namespace Hexagons
 
         private void OnWindowLoaded(object sender, RoutedEventArgs e)
         {
-            MakeWindowClickThrough();
-            DrawHexagonGrid();
-            SetupInputHooks();
+            // Delay the setup slightly to ensure window is fully loaded
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                MakeWindowClickThrough();
+                DrawHexagonGrid();
+                SetupInputHooks();
 
-            this.Focus();
-            this.Activate();
+                this.Focus();
+                this.Activate();
+
+                if (_config.ConstantTrail && !_holdTimer.IsEnabled)
+                {
+                    _holdTimer.Start();
+                }
+            }), DispatcherPriority.Loaded);
 
             Closed += OnWindowClosed;
-
-            if (_config.ConstantTrail && !_holdTimer.IsEnabled)
-            {
-                _holdTimer.Start();
-            }
         }
 
         private void MakeWindowClickThrough()
@@ -445,11 +507,10 @@ namespace Hexagons
         {
             try
             {
-                // Convert screen coordinates to canvas coordinates
-                Point canvasPoint = new Point(
-                    screenPoint.X - Left,
-                    screenPoint.Y - Top
-                );
+                var totalBounds = MultiMonitorHelper.GetTotalScreenBounds();
+                Point canvasPoint = MultiMonitorHelper.ScreenToCanvas(screenPoint, totalBounds);
+
+                Debug.WriteLine($"Mouse at screen: {screenPoint}, canvas: {canvasPoint}");
 
                 foreach (var hex in _hexagons.Where(h => IsPointInHexagon(h.Points, canvasPoint)))
                 {
@@ -565,11 +626,10 @@ namespace Hexagons
             Polygon closestHex = null;
             double minDistance = double.MaxValue;
 
-            // Convert screen position to canvas position
-            Point canvasPosition = new Point(
-                targetPosition.X - Left,
-                targetPosition.Y - Top
-            );
+            var totalBounds = MultiMonitorHelper.GetTotalScreenBounds();
+            Point canvasPosition = MultiMonitorHelper.ScreenToCanvas(targetPosition, totalBounds);
+
+            Debug.WriteLine($"Finding closest hex to screen: {targetPosition}, canvas: {canvasPosition}");
 
             foreach (var hex in _hexagons)
             {

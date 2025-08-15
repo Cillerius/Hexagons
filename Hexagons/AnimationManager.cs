@@ -291,6 +291,8 @@ namespace Hexagons
             // Use multi-monitor aware maximum distance calculation
             double maxRadius = MultiMonitorHelper.GetMaxScreenDistance();
 
+            Debug.WriteLine($"Starting ripple from: {origin}, max radius: {maxRadius}");
+
             double step = 20; // how fast the ring grows (pixels per frame)
             double currentRadius = 0;
 
@@ -320,6 +322,7 @@ namespace Hexagons
                 if (currentRadius >= maxRadius)
                 {
                     rippleTimer.Stop();
+                    Debug.WriteLine("Ripple animation completed");
                 }
             };
 

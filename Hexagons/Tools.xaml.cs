@@ -120,14 +120,12 @@ namespace Hexagons
 
                     //ripple
                     case 2:
-                        MainWindow.StartRipple(new Point(
-                        SystemParameters.PrimaryScreenWidth / 2,
-                        SystemParameters.PrimaryScreenHeight / 2));
+                        var center = MultiMonitorHelper.GetTotalScreenCenter();
+                        MainWindow.StartRipple(center);
                         break;
 
                     //none
                     case 3:
-
                         break;
                     default:
                         MainWindow.StartWaveAnimation();
